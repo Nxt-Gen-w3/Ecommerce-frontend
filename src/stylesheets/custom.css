@@ -81,8 +81,13 @@ table {
 .flex_66{
   flex: 0 1 66%;
 }
-
+.border{
+  border: 1px solid rgba(128, 128, 128, 0.15);
+}
 /* Header Component*/
+.header{
+  border-bottom: 1px solid rgba(128, 128, 128, 0.221);
+}
 /* Hero Component */
 .hero_bg{
   background: url("../../public/images/hero_bg.jpg") no-repeat;
