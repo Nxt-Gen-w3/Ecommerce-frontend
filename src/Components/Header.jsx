@@ -1,12 +1,15 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 function Header() {
   return (
     <>
-      <header className="border-2 p-5">
+      <header className="p-5 border-b-2 header">
         <nav className="container flex justify-between items-center">
-          <a href="" className="flex_18">
-            <img src="/images/Logo.jpg" alt="logo" />
-          </a>
+          <p className="flex_18">
+            <NavLink to="/">
+              <img src="/images/Logo.jpg" alt="logo" />
+            </NavLink>
+          </p>
 
           <ul className="flex flex_38 justify-between">
             <li className="hover:text-yellow-500 transition-all font-extrabold cursor-pointer home_sub_display">

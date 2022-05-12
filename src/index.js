@@ -4,5 +4,11 @@ import App from "./Components/App.js";
 import "./stylesheets/style.css";
 import "./stylesheets/custom.css";
 import * as LottiePlayer from "@lottiefiles/lottie-player";
+import { BrowserRouter } from "react-router-dom";
 
-ReactDom.render(<App />, document.getElementById("root"));
+ReactDom.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById("root")
+);
