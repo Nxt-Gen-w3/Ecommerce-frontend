@@ -1,0 +1,144 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+  font-family: 'Open Sans', sans-serif;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* custom styles */
+.container{
+  max-width: 1400px;
+  width: 100%;
+  margin: auto;
+}
+.flex_12{
+  flex: 0 1 12%;
+}
+.flex_18{
+  flex: 0 1 18%;
+}
+.flex_23{
+  flex: 0 1 23%;
+}
+.flex_28{
+  flex: 0 1 28%;
+}
+.flex_32{  
+  flex: 0 1 32%;
+}
+.flex_38{
+  flex: 0 1 38%;   
+}
+.flex_42{
+  flex: 0 1 42%;
+}
+.flex_47{
+  flex: 0 1 47%;
+}
+.flex_50{
+  flex: 0 1 50%;
+}
+.flex_62{
+  flex: 0 1 62%;
+}
+.flex_66{
+  flex: 0 1 66%;
+}
+
+/* Header Component*/
+/* Hero Component */
+.hero_bg{
+  background: url("../../public/images/hero_bg.jpg") no-repeat;
+  background-size: cover;
+  height: 93vh;
+}
+.image{
+  padding-bottom: 1rem ;
+}
+.offer_img1, .offer_img2, .offer_img3{
+  background: url("../../public/images/offers/leo_two.png") no-repeat;
+  background-size: cover;
+  height: 30vh;
+  /* border: 1px solid rgba(128, 128, 128, 0.248); */
+}
+.offer_img2{
+  background: url("../../public/images/offers/leo_one.png") no-repeat;
+  background-size: cover;
+  
+}
+.offer_img3{
+  background: url("../../public/images/offers/leo_map.png") no-repeat;
+  background-size: cover;
+
+}
+.control-dots{
+  display: none;
+}
+.carousel{
+  border: 1px solid rgba(128, 128, 128, 0.067);
+}
+/* hotDog banner */
+.hotdog_banner{
+  background: url("../../public/images/hotdog.jpg") no-repeat;
+  background-size: cover;
+  height: 60vh;
+}
+/* Top Receipes */
+.super_delicious{
+  background: url(../../public/images/super_delicious.jpg) no-repeat;
+  background-size: cover;
+  height: 65vh;
+}
+.Description{
+  background: url(../../public/images/bg-desc.jpg) no-repeat;
+  background-size: contain;
+  height: 40vh;
+}
+
+/* Latest news */
+.Latest_article{
+  background: url(../../public//images/latest//leo_poco_banner21-h1.png);
+  background-size: cover;
+  height: 54.5vh;
+}
+.hr{
+  width: 100%;
+  border-bottom: 1px solid gray;
+}
