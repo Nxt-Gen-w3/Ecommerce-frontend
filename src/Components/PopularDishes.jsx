@@ -1,5 +1,6 @@
 import React from "react";
 import PopDishes from "../JsonFiles/PopDishes.json";
+import { NavLink } from "react-router-dom";
 
 function PopularDishes() {
   const items = ["pizza", "sushi", "salats", "burger", "dersest"];
@@ -17,18 +18,20 @@ function PopularDishes() {
         </section>
 
         <section className="flex flex-wrap justify-between">
-          {PopDishes.map((each) => (
+          {PopDishes.map((each, index) => (
             <>
               <article className="flex_23 border-2 p-3">
-                <img src={each.image} alt="" />
-                <div className="flex justify-between">
-                  <div>
-                    <h5>{each.name}</h5>
-                    <p>{each.discription}</p>
-                    <h3>{each.price}</h3>
+                <NavLink to={`/${index}`}>
+                  <img src={each.image} alt="" />
+                  <div className="flex justify-between">
+                    <div>
+                      <h5>{each.name}</h5>
+                      <p>{each.discription}</p>
+                      <h3>{each.price}</h3>
+                    </div>
+                    <i className="fa-solid fa-layer-minus"></i>
                   </div>
-                  <i className="fa-solid fa-layer-minus"></i>
-                </div>
+                </NavLink>
               </article>
             </>
           ))}

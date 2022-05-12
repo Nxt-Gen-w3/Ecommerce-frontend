@@ -13,6 +13,7 @@ import { Route, Switch } from "react-router-dom";
 import SignIn from "./SignIn";
 import NotFound from "./NotFound";
 import SignUp from "./SignUp";
+import Individual from "./Individual";
 
 function App() {
   return (
@@ -35,6 +36,9 @@ function App() {
           </Route>
           <Route path="/signUp" exact>
             <SignUp />
+          </Route>
+          <Route path="/:id" exact>
+            <Individual />
           </Route>
           <Route path="*" exact>
             <NotFound />
