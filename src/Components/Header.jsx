@@ -43,13 +43,17 @@ function Header() {
 
           <ul className="flex flex_12">
             <li>
-              <i className="fa-solid fa-house block ml-5 border-2 p-3 bg-green-400 rounded-full"></i>
+              <NavLink to="/cart">
+                <i className="fa-solid fa-house block ml-5 border-2 p-3 bg-green-400 rounded-full"></i>
+              </NavLink>
             </li>
             <li>
               <i className="fa-solid fa-magnifying-glass block ml-5 border-2 p-3 bg-green-400 rounded-full"></i>
             </li>
             <li>
-              <i className="fa-solid fa-user block ml-5 border-2 p-3 bg-green-400 rounded-full"></i>
+              <NavLink to="/signIn">
+                <i className="fa-solid fa-user block ml-5 border-2 p-3 bg-green-400 rounded-full"></i>
+              </NavLink>
             </li>
           </ul>
         </nav>

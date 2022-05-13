@@ -81,8 +81,14 @@ table {
 .flex_66{
   flex: 0 1 66%;
 }
+.flex_72{
+  flex: 0 1 72%;
+}
 .border{
   border: 1px solid rgba(128, 128, 128, 0.15);
+}
+.desc{
+  border-bottom: 3px solid yellow;
 }
 /* Header Component*/
 .header{
