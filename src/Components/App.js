@@ -15,6 +15,7 @@ import NotFound from "./NotFound";
 import SignUp from "./SignUp";
 import Individual from "./Individual";
 import Cart from "./Cart";
+import AllItems from "./AllItems";
 
 function App() {
   return (
@@ -40,6 +41,9 @@ function App() {
           </Route>
           <Route path="/cart" exact>
             <Cart />
+          </Route>
+          <Route path="/allItems" exact>
+            <AllItems />
           </Route>
           <Route path="/:id" exact>
             <Individual />

@@ -3,7 +3,7 @@ function DishCard(props) {
   const { each } = props;
   return (
     <>
-      <article className=" flex_47  mt-2 p-1.5 rounded-lg">
+      <article className="flex_47  mt-2 p-1.5 rounded-lg">
         <div className="flex items-center bg-gray-50 rounded-lg">
           <img className="w-5/12" src={each.image} alt="" />
 
