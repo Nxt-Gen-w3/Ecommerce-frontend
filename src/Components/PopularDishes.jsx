@@ -39,7 +39,7 @@ function PopularDishes() {
 
         <section>
           <button className="border p-4 px-10 m-auto mt-20 rounded-lg bg-yellow-500 transition-all font-extrabold block">
-            Show More
+            <NavLink to="/allItems">Show More</NavLink>
           </button>
         </section>
       </div>

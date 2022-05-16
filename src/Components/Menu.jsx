@@ -17,7 +17,7 @@ function Menu() {
             infiniteLoop={true}
             showArrows
             interval={1500}
-            centerSlidePercentage={13}
+            centerSlidePercentage={10}
             centerMode
           >
             <div className="image">
