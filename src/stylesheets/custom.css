@@ -155,6 +155,116 @@ table {
   border-bottom: 1px solid gray;
 }
 /* respsonsiv design */
+@media screen and (max-width : 915px) {
+  html{
+    font-size: 14px;
+  }
+  .container{
+    width: 90%;
+    margin: auto;
+  }
+  .column{
+    flex-direction: column;
+  }
+  /* header */
+  .header_option{
+    display: none;
+  }
+  .header .flex_18{
+    flex: 0 1 32%;
+  }
+  /* header end */
+  .hero_bg{
+    height: 40vh;
+  }
+  .hero_heading{
+    font-size: 2.5rem;
+  }
+  .hero_price .order_now{
+    font-size: 0.8rem;
+    width: 7rem;
+    text-align: center;
+    padding: 0rem 0.3rem;
+  }
+  .hero_price p{
+    font-size: 2rem;
+  }
+  .hero_price span{
+    font-size: 1.3rem;
+  }
+  .carousel{
+    width: 100%;
+  }
+  .carousel{
+    width: 100%;
+  }
+  .offers .flex_32{
+    flex: 0 1 45%;
+    height: 16vh;
+    margin: 1rem;
+  }
+  .offers .offer_img3{
+    margin-top: 1.5rem;
+  }
+  .popular_buttons{
+    width: 90%;
+  }
+  .popular_dishes .flex_23{
+    flex: 0 1 32%;
+  }
+  .hotdog_banner{
+    height: 30vh;
+  }
+  .flex_66{
+    flex: 0 1 90%;
+  }
+  .super_delicious{
+    display: none;
+
+  }
+  .Description{
+    height: 15vh;
+    width: 90%;
+    margin: 2rem;
+  }
+  .Description .carousel{
+    margin-top: -1.5rem;
+    width: 90%;
+    border: none;
+  }
+  .flex_50{
+    flex: 0 1 100%;
+    margin-top: 1rem;
+  }
+  .Latest_news .flex_32{
+    flex: 0 1 48%;
+    margin-top: 1.5rem;
+    border: 1px solid gray;
+    margin: 1.5rem 0.2rem;
+  }
+  .cart .price{
+    margin-top: 3rem;
+  }
+  .signIn form, .signUp form{
+    width: 70%;
+  }
+  .individual .flex_47{
+    flex: 0 1 100%;
+  }
+  .individual .flex_47 img{
+    width: 100%;
+  }
+  .individual_toggle .flex_28{
+    flex: 0 1 42%;
+  }
+
+  
+  /* footer */
+  footer .flex_23{
+    flex: 0 1 42%;
+    margin-top: 0rem;
+  }
+}
 
 @media screen and (max-width : 768px) {
   html{
@@ -265,6 +375,319 @@ table {
     flex: 0 1 42%;
     margin-top: 0rem;
   }
+ 
+}
+@media screen and (max-width : 550px) {
+  html{
+    font-size: 10px;
+  }
+  .container{
+    width: 90%;
+    margin: auto;
+  }
+  .column{
+    flex-direction: column;
+  }
+  /* header */
+  .header .flex_12, .header_text{
+    width: 100%;
+  }
+  .header .flex_18{
+    flex: 0 1 100%;
+  }
+
+  .header .header_icons{
+   width: 100%;
+  }
+  .header_text{
+    display: none;
+  }
+  /* header end */
+  .hero_bg{
+    height: 40vh;
+  }
+  .hero_heading{
+    font-size: 2.5rem;
+  }
+  .hero_price .order_now{
+    font-size: 0.8rem;
+    width: 7rem;
+    text-align: center;
+    padding: 0rem 0.3rem;
+  }
+  .hero_price p{
+    font-size: 2rem;
+  }
+  .hero_price span{
+    font-size: 1.3rem;
+  }
+  .carousel{
+    width: 100%;
+    display: none;
+  }
+  .menu{
+    width: 20%;
+  }
+  .offers .flex_32{
+    flex: 0 1 49%;
+    height: 20vh;
+    margin: 0.2rem;
+  }
+  .offers .offer_img3{
+    margin-top: 1.5rem;
+  }
+  .popular_buttons{
+    width: 90%;
+  }
+  .popular_dishes .flex_23{
+    flex: 0 1 47%;
+  }
+  .hotdog_banner{
+    height: 30vh;
+  }
+  .flex_66{
+    flex: 0 1 90%;
+  }
+  .super_delicious{
+    display: none;
+
+  }
+  .Description{
+    height: 15vh;
+    width: 90%;
+    margin: 2rem;
+  }
+  .Description .carousel{
+    margin-top: -1.5rem;
+    width: 90%;
+    border: none;
+  }
+  .flex_50{
+    flex: 0 1 100%;
+    margin-top: 1rem;
+  }
+  .Latest_news .flex_32{
+    flex: 0 1 100%;
+    margin-top: 1.5rem;
+    border: 1px solid gray;
+    margin: 1.5rem 0.2rem;
+  }
+  .cart .price{
+    margin-top: 3rem;
+  }
+  .signIn form, .signUp form{
+    width: 70%;
+  }
+  .individual .flex_47{
+    flex: 0 1 100%;
+  }
+  .individual .flex_47 img{
+    width: 100%;
+  }
+  .individual_toggle .flex_28{
+    flex: 0 1 42%;
+  }
+  .signIn form, .signUp form{
+    width: 95%;
+  }
 
   
+  /* footer */
+  footer .flex_23{
+    flex: 0 1 42%;
+    margin-top: 0rem;
+  }
+}
+@media screen and (max-width : 416px) {
+  html{
+    font-size: 12px;
+  }
+  .container{
+    width: 90%;
+  }
+  .flex_12, .flex_18, .flex_23, .flex_28, .flex_32, .flex_38, .flex_42, .flex_47, .flex_50, .flex_62, .flex_66, .flex_72{
+    flex: 0 1 100%;
+  }
+  .flex_18 img{
+    width: 80%;
+  }
+  .header .flex_12, .header_text{
+    width: 100%;
+  }
+  .header .flex_18{
+    flex: 0 1 100%;
+  }
+
+  .header .header_icons{
+   width: 100%;
+  }
+  .header_text{
+    display: none;
+  }
+  /* hero */
+  .hero_bg{
+    height: 30vh;
+  }
+  .hero_bg .content{
+    margin-left: 3rem;
+    margin-top: 4rem;
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+  .hero_bg h1{
+    font-size: 2rem;
+  }
+  .hero_bg p{
+    font-size: 1rem;
+  }
+  /* menu */
+  .menu{
+    width: 20%;
+  }
+  .carousel{
+    display: none;
+  }
+  /* offers */
+  .offers .flex_32{
+    flex: 0 1 100%;
+    height: 25vh;
+  }
+  .popular_buttons{
+    width: 100%;
+  }
+  .popular_buttons button{
+    padding: 0.5rem 0.8rem;
+    font-size: 1.3rem;
+  }
+  .popular_dishes .flex_23{
+    flex: 0 1 100%;
+  }
+  /* HotDog */
+  .hotdog_banner{
+    height: 25vh;
+    margin: 0;
+  }
+  .hotdog_banner .content h2{
+    font-size: 2rem;
+  }
+  .hotdog_banner .content h3{
+    font-size: 2rem;
+  }
+  .hotdog_banner .content button{
+    font-size: 1rem;
+    padding: 0.4rem 1rem;
+  }
+  /* Description */
+  .Description{
+    display: none;
+  }
+  /* Latest  */
+  .Latest_news .flex_32{
+    flex: 0 1 100%;
+  }
+  .signIn form, .signUp form{
+    width: 95%;
+  }
+  /* footer */
+  footer .flex_23{
+    flex: 0 1 100%;
+  }
+
+}
+@media screen and (max-width : 375px) {
+  html{
+    font-size: 10px;
+  }
+  .container{
+    width: 90%;
+  }
+  .flex_12, .flex_18, .flex_23, .flex_28, .flex_32, .flex_38, .flex_42, .flex_47, .flex_50, .flex_62, .flex_66, .flex_72{
+    flex: 0 1 100%;
+  }
+  .flex_18 img{
+    width: 80%;
+  }
+  .header .flex_12, .header_text{
+    width: 100%;
+  }
+  .header .flex_18{
+    flex: 0 1 100%;
+  }
+
+  .header .header_icons{
+   width: 100%;
+  }
+  .header_text{
+    display: none;
+  }
+  /* hero */
+  .hero_bg{
+    height: 30vh;
+  }
+  .hero_bg .content{
+    margin-left: 3rem;
+    margin-top: 4rem;
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+  .hero_bg h1{
+    font-size: 2rem;
+  }
+  .hero_bg p{
+    font-size: 1rem;
+  }
+  /* menu */
+  .menu{
+    width: 20%;
+  }
+  .carousel{
+    display: none;
+  }
+  /* offers */
+  .offers .flex_32{
+    flex: 0 1 100%;
+    height: 25vh;
+  }
+  .popular_buttons{
+    width: 100%;
+  }
+  .popular_buttons button{
+    padding: 0.5rem 0.8rem;
+    font-size: 1.0rem;
+  }
+  .popular_dishes .flex_23{
+    flex: 0 1 100%;
+  }
+  /* HotDog */
+  .hotdog_banner{
+    height: 25vh;
+    margin: 0;
+  }
+  .hotdog_banner .content h2{
+    font-size: 2rem;
+  }
+  .hotdog_banner .content h3{
+    font-size: 2rem;
+  }
+  .hotdog_banner .content button{
+    font-size: 1rem;
+    padding: 0.4rem 1rem;
+    margin: 0;
+  }
+  /* Description */
+  .Description{
+    display: none;
+  }
+  /* Latest  */
+  .Latest_news .flex_32{
+    flex: 0 1 100%;
+  }
+  .signIn form, .signUp form{
+    width: 95%;
+  }
+  /* footer */
+  footer .flex_23{
+    flex: 0 1 100%;
+  }
+
 }

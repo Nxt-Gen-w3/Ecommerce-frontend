@@ -4,7 +4,7 @@ function Hero() {
     <>
       <div className="hero_bg">
         <section className="container flex items-center h-5/6">
-          <div className="flex_42 leading-10 ml-20 mt-28">
+          <div className="flex_42 leading-10 ml-20 mt-28 content">
             <h1 className="text-7xl font-extrabold text-white hero_heading">
               UNLIMITED MEDIUM <span className="text-yellow-500 ">PIZZAS</span>
             </h1>
@@ -20,7 +20,7 @@ function Hero() {
               </div>
               <div className="flex ml-5">
                 <p className="text-green-500 text-6xl">$12.99</p>
-                <span className="text-2xl inline-block ml-4 text-gray-500">
+                <span className="text-2xl inline-block ml-4 text-gray-500 sm:appearance-none">
                   $19.99
                 </span>
               </div>

@@ -32,7 +32,7 @@ function Header() {
             </li>
           </ul>
 
-          <ul className="flex_18 ">
+          <ul className="flex_18 header_text">
             <li className="text-right">
               <small className="text-green-500">call Order in</small>
             </li>
@@ -41,7 +41,7 @@ function Header() {
             </li>
           </ul>
 
-          <ul className="flex flex_12">
+          <ul className="flex flex_12 header_icons">
             <li>
               <NavLink to="/cart">
                 <i className="fa-solid fa-cart-shopping block ml-5 border-2 p-3 bg-green-400 rounded-full"></i>

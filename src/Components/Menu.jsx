@@ -6,7 +6,7 @@ function Menu() {
   return (
     <>
       <div className="container">
-        <p className="m-auto text-center bg-yellow-500 w-1/12 p-3 rounded-md -mt-3">
+        <p className="m-auto text-center bg-yellow-500 w-1/12 p-3 rounded-md -mt-3 menu">
           Menu
         </p>
         <section className="carousel h-2/4 mt-6">

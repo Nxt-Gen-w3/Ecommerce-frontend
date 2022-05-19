@@ -7,7 +7,7 @@ function PopularDishes() {
   return (
     <>
       <div className="container py-20">
-        <section className="w-5/12 m-auto flex justify-between items-center popular_buttons">
+        <section className="w-6/12 m-auto flex justify-between items-center flex-wrap popular_buttons">
           {items.map((each) => (
             <>
               <button className="border m-3 p-4 px-6 rounded-3xl hover:bg-yellow-500 transition-all bg-gray-50 font-extrabold block">
