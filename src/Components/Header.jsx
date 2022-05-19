@@ -11,7 +11,7 @@ function Header() {
             </NavLink>
           </p>
 
-          <ul className="flex flex_38 justify-between">
+          <ul className="flex flex_38 justify-between header_option">
             <li className="hover:text-yellow-500 transition-all font-extrabold cursor-pointer home_sub_display">
               Home <i className="fa-solid fa-caret-down"></i>
             </li>
@@ -44,7 +44,7 @@ function Header() {
           <ul className="flex flex_12">
             <li>
               <NavLink to="/cart">
-                <i className="fa-solid fa-house block ml-5 border-2 p-3 bg-green-400 rounded-full"></i>
+                <i className="fa-solid fa-cart-shopping block ml-5 border-2 p-3 bg-green-400 rounded-full"></i>
               </NavLink>
             </li>
             <li>

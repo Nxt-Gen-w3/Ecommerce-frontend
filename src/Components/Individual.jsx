@@ -9,7 +9,7 @@ function Individual() {
   };
   return (
     <>
-      <div className=" bg-gray-100 py-10">
+      <div className=" bg-gray-100 py-10 individual">
         <div className="container flex items-center py-4 overflow-y-auto whitespace-nowrap">
           <a href="#" className="text-gray-600 dark:text-gray-200">
             <svg
@@ -50,9 +50,13 @@ function Individual() {
           </a>
         </div>
       </div>
-      <div className="container flex justify-center py-10">
+      <div className="container flex justify-center py-10 column individual">
         <section className="flex_47 ">
-          <img src="/images/PopDishes/brown-bear-cushion.jpg" alt="" />
+          <img
+            className="Item_image"
+            src="/images/PopDishes/brown-bear-cushion.jpg"
+            alt=""
+          />
         </section>
         <section className="flex_47 leading-8 p-2">
           <h2 className="text-2xl font-extrabold">Achari Couple</h2>
@@ -117,7 +121,7 @@ function Individual() {
         </section>
       </div>
 
-      <div className="container py-10">
+      <div className="container py-10 individual_toggle">
         <div className="flex justify-center">
           <div className="flex_28 flex justify-between">
             <h3
@@ -220,7 +224,7 @@ function Individual() {
         <h2 className="text-3xl font-extrabold text-center ">
           YOU MIGHT ALSO LIKE
         </h2>
-        <section className="flex flex-wrap justify-between">
+        <section className="flex flex-wrap justify-between popular_dishes">
           {PopDishes.map((each, index) => (
             <>
               <article className="flex_23 border-2 p-3">

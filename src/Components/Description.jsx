@@ -4,7 +4,7 @@ function Description() {
   return (
     <>
       <div className="Description flex justify-center">
-        <section className="container py-10 border">
+        <section className="container py-10 border carousel">
           <Carousel
             autoPlay
             infiniteLoop

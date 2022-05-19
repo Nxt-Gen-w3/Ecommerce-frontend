@@ -3,7 +3,7 @@ import { React, useEffect } from "react";
 function Footer() {
   return (
     <>
-      <div className="py-28 bg-black">
+      <footer className="py-28 bg-black">
         <section className="flex items-center">
           <div className="hr"></div>
           <img className="px-6" src="/images/Logo.jpg" alt="" />
@@ -11,7 +11,7 @@ function Footer() {
         </section>
 
         <section className="container text-white border-2">
-          <nav className="flex justify-between">
+          <nav className="flex justify-between flex-wrap">
             <ul className="flex_23 p-8  text-center leading-8">
               <li>
                 <h3 className="font-extrabold text-2xl">Address</h3>
@@ -51,7 +51,7 @@ function Footer() {
             </ul>
           </nav>
         </section>
-      </div>
+      </footer>
     </>
   );
 }

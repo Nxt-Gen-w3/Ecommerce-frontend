@@ -4,7 +4,7 @@ function SignIn() {
   return (
     <>
       <div>
-        <section className="container py-10">
+        <section className="container py-10 signIn">
           <h2 className="text-center text-3xl font-extrabold">
             Log in to your account
           </h2>

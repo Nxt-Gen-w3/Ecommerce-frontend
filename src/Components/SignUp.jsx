@@ -4,7 +4,7 @@ function SignUp() {
   return (
     <>
       <div>
-        <section className="container py-10">
+        <section className="container py-10 signUp">
           <h2 className="text-center text-3xl font-extrabold">
             Create an account
           </h2>

@@ -26,6 +26,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
   font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
 }
 ol, ul {
 	list-style: none;
@@ -152,4 +153,118 @@ table {
 .hr{
   width: 100%;
   border-bottom: 1px solid gray;
+}
+/* respsonsiv design */
+
+@media screen and (max-width : 768px) {
+  html{
+    font-size: 14px;
+  }
+  .container{
+    width: 90%;
+    margin: auto;
+  }
+  .column{
+    flex-direction: column;
+  }
+  /* header */
+  .header_option{
+    display: none;
+  }
+  .header .flex_18{
+    flex: 0 1 32%;
+  }
+  /* header end */
+  .hero_bg{
+    height: 40vh;
+  }
+  .hero_heading{
+    font-size: 2.5rem;
+  }
+  .hero_price .order_now{
+    font-size: 0.8rem;
+    width: 7rem;
+    text-align: center;
+    padding: 0rem 0.3rem;
+  }
+  .hero_price p{
+    font-size: 2rem;
+  }
+  .hero_price span{
+    font-size: 1.3rem;
+  }
+  .carousel{
+    width: 100%;
+  }
+  .carousel{
+    width: 100%;
+  }
+  .offers .flex_32{
+    flex: 0 1 49%;
+    height: 20vh;
+    margin: 0.2rem;
+  }
+  .offers .offer_img3{
+    margin-top: 1.5rem;
+  }
+  .popular_buttons{
+    width: 90%;
+  }
+  .popular_dishes .flex_23{
+    flex: 0 1 32%;
+  }
+  .hotdog_banner{
+    height: 30vh;
+  }
+  .flex_66{
+    flex: 0 1 90%;
+  }
+  .super_delicious{
+    display: none;
+
+  }
+  .Description{
+    height: 15vh;
+    width: 90%;
+    margin: 2rem;
+  }
+  .Description .carousel{
+    margin-top: -1.5rem;
+    width: 90%;
+    border: none;
+  }
+  .flex_50{
+    flex: 0 1 100%;
+    margin-top: 1rem;
+  }
+  .Latest_news .flex_32{
+    flex: 0 1 48%;
+    margin-top: 1.5rem;
+    border: 1px solid gray;
+    margin: 1.5rem 0.2rem;
+  }
+  .cart .price{
+    margin-top: 3rem;
+  }
+  .signIn form, .signUp form{
+    width: 70%;
+  }
+  .individual .flex_47{
+    flex: 0 1 100%;
+  }
+  .individual .flex_47 img{
+    width: 100%;
+  }
+  .individual_toggle .flex_28{
+    flex: 0 1 42%;
+  }
+
+  
+  /* footer */
+  footer .flex_23{
+    flex: 0 1 42%;
+    margin-top: 0rem;
+  }
+
+  
 }

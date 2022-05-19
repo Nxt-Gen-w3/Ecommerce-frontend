@@ -2,8 +2,8 @@ import React from "react";
 function Cart() {
   return (
     <>
-      <div>
-        <section className="container flex py-16">
+      <div className="cart">
+        <section className="container flex py-16 column justify-center">
           <section className="flex_62 border">
             <h2 className="font-extrabold text-2xl uppercase py-2 ml-4">
               shopping cart
@@ -46,7 +46,7 @@ function Cart() {
               <i class="fa-solid fa-chevron-left"></i> Continue Shopping
             </div>
           </section>
-          <section className="flex_32 border">
+          <section className="flex_32 border price">
             <div>
               <ul className="p-6">
                 <li className="flex justify-between my-2">

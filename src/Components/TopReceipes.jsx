@@ -4,7 +4,7 @@ import DishCard from "./DishCard";
 function TopReceipes() {
   return (
     <>
-      <div className="container flex justify-between py-10">
+      <div className="container flex justify-between py-10 column">
         <section className="flex_66">
           <div className="flex justify-between items-center border ">
             <h2 className="text-4xl font-extrabold">Top Receipes</h2>
