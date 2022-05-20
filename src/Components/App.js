@@ -33,10 +33,10 @@ function App() {
             <Description />
             <LatestNews />
           </Route>
-          <Route path="/signIn" exact>
+          <Route path="/signin" exact>
             <SignIn />
           </Route>
-          <Route path="/signUp" exact>
+          <Route path="/signup" exact>
             <SignUp />
           </Route>
           <Route path="/cart" exact>

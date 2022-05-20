@@ -7,26 +7,23 @@ function Header() {
         <nav className="container flex justify-between items-center">
           <p className="flex_18">
             <NavLink to="/">
-              <img src="/images/Logo.jpg" alt="logo" />
+              <img src="/images/logo-min.png" alt="logo" />
             </NavLink>
           </p>
 
           <ul className="flex flex_38 justify-between header_option">
             <li className="hover:text-yellow-500 transition-all font-extrabold cursor-pointer home_sub_display">
-              Home <i className="fa-solid fa-caret-down"></i>
+              Home 
             </li>
             <li className="hover:text-yellow-500 transition-all font-extrabold cursor-pointer">
-              Pages <i className="fa-solid fa-caret-down"></i>
+              About
             </li>
             <li className="hover:text-yellow-500 transition-all font-extrabold cursor-pointer">
-              Blog
+              Products <i className="fa-solid fa-caret-down"></i>
             </li>
-            <li className="hover:text-yellow-500 transition-all font-extrabold cursor-pointer">
-              Shop <i className="fa-solid fa-caret-down"></i>
-            </li>
-            <li className="hover:text-yellow-500 transition-all font-extrabold cursor-pointer">
+            {/* <li className="hover:text-yellow-500 transition-all font-extrabold cursor-pointer">
               Portfolio
-            </li>
+            </li> */}
             <li className="hover:text-yellow-500 transition-all font-extrabold cursor-pointer">
               Contact
             </li>
@@ -37,7 +34,7 @@ function Header() {
               <small className="text-green-500">call Order in</small>
             </li>
             <li className="text-right text-2xl font-extrabold text-yellow-400">
-              +1 718-904-4450
+              +91 9883097200
             </li>
           </ul>
 
@@ -47,11 +44,11 @@ function Header() {
                 <i className="fa-solid fa-cart-shopping block ml-5 border-2 p-3 bg-green-400 rounded-full"></i>
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <i className="fa-solid fa-magnifying-glass block ml-5 border-2 p-3 bg-green-400 rounded-full"></i>
-            </li>
+            </li> */}
             <li>
-              <NavLink to="/signIn">
+              <NavLink to="/signin">
                 <i className="fa-solid fa-user block ml-5 border-2 p-3 bg-green-400 rounded-full"></i>
               </NavLink>
             </li>
