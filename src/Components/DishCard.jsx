@@ -7,10 +7,10 @@ function DishCard(props) {
         <div className="flex items-center bg-gray-50 rounded-lg">
           <img className="w-5/12" src={each.image} alt="" />
 
-          <div className="ml-8">
-            <h4>{each.name}</h4>
-            <p>{each.discription}</p>
-            <p>{each.price}</p>
+          <div className="ml-8 flex-col items-center justify-between">
+            <h4 className="m-1  text-orange-500 font-bold">{each.name}</h4>
+            <p className="m-1 font-semibold">{each.discription}</p>
+            <p className="m-1">{each.price}</p>
           </div>
         </div>
       </article>

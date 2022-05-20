@@ -97,9 +97,9 @@ table {
 }
 /* Hero Component */
 .hero_bg{
-  background: url("../../public/images/hero_bg.jpg") no-repeat;
+  background: url("../../public/images/hero-bg-2.png") no-repeat;
   background-size: cover;
-  height: 93vh;
+  height: 94vh;
 }
 .image{
   padding-bottom: 1rem ;
