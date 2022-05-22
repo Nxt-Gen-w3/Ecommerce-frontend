@@ -39,7 +39,7 @@ function SignIn() {
               />
               <hr />
               <p className="text-center text-sm hover:text-yellow-500 my-4">
-                <NavLink to="/signUp">No Account? Create One Here</NavLink>
+                <NavLink to="/signup">No Account? Create One Here</NavLink>
               </p>
             </fieldset>
           </form>

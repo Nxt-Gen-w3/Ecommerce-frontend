@@ -9,22 +9,22 @@ function Offers() {
           <article className="flex_32 offer_img1 m-2 flex items-center">
             <Card
               title="Any Day Offers"
-              description="NEW PHENOMENON BURGER TASTE"
-              price="$12.90"
+              description="NEW PHENOMENON PICKLE TASTE"
+              price="Start at Rs 60"
             />
           </article>
           <article className="flex_32 offer_img2 m-2 flex items-center">
             <Card
               title="Any Day Offers"
-              description="NEW PHENOMENON BURGER TASTE"
-              price="$12.90"
+              description="NEW PHENOMENON PICKLE TASTE"
+              price="Start at Rs 60"
             />
           </article>
           <article className="flex_32 offer_img3 m-2 flex items-center">
             <Card
               title="Any Day Offers"
-              description="NEW PHENOMENON BURGER TASTE"
-              price="$12.90"
+              description="NEW PHENOMENON PICKLE TASTE"
+              price="Start at Rs 60"
             />
           </article>
         </section>

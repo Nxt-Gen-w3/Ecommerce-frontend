@@ -1,55 +1,143 @@
 [
   {
-    "id": 1,
-    "image": "/images/PopDishes/brown-bear-cushion.jpg",
+    "image": "/images/PopDishes/pickle-1.png",
     "name": "Pizza Hut",
     "discription": "men",
     "price": "$23.90"
   },
   {
-    "id": 2,
+    "image": "/images/PopDishes/pickle-1.png",
+    "name": "Pizza Hut",
+    "discription": "men",
+    "price": "$23.90"
+  },
+  {
+    "image": "/images/PopDishes/pickle-1.png",
+    "name": "Pizza Hut",
+    "discription": "men",
+    "price": "$23.90"
+  },
+  {
+    "image": "/images/PopDishes/pickle-1.png",
+    "name": "Pizza Hut",
+    "discription": "men",
+    "price": "$23.90"
+  },
+  {
+    "image": "/images/PopDishes/pickle-1.png",
+    "name": "Pizza Hut",
+    "discription": "men",
+    "price": "$23.90"
+  },
+  {
+    "image": "/images/PopDishes/pickle-1.png",
+    "name": "Pizza Hut",
+    "discription": "men",
+    "price": "$23.90"
+  },
+  {
+    "image": "/images/PopDishes/pickle-1.png",
+    "name": "Pizza Hut",
+    "discription": "men",
+    "price": "$23.90"
+  },
+  {
+    "image": "/images/PopDishes/pickle-1.png",
+    "name": "Pizza Hut",
+    "discription": "men",
+    "price": "$23.90"
+  },
+  {
+    "image": "/images/PopDishes/pickle-1.png",
+    "name": "Pizza Hut",
+    "discription": "men",
+    "price": "$23.90"
+  },
+  {
     "image": "/images/PopDishes/hummingbird-cushion.jpg",
     "name": "Pizza Hut",
     "discription": "men",
     "price": "$23.90"
   },
   {
-    "id": 3,
     "image": "/images/PopDishes/hummingbird-printed-t-shirt.jpg",
     "name": "Pizza Hut",
     "discription": "men",
     "price": "$23.90"
   },
   {
-    "id": 4,
     "image": "/images/PopDishes/mountain-fox-cushion.jpg",
     "name": "Pizza Hut",
     "discription": "men",
     "price": "$23.90"
   },
   {
-    "id": 5,
     "image": "/images/PopDishes/mug-today-is-a-good-day.jpg",
     "name": "Pizza Hut",
     "discription": "men",
     "price": "$23.90"
   },
   {
-    "id": 6,
     "image": "/images/PopDishes/brown-bear-printed-sweater.jpg",
     "name": "Pizza Hut",
     "discription": "men",
     "price": "$23.90"
   },
   {
-    "id": 7,
     "image": "/images/PopDishes/mug-today-is-a-good-day.jpg",
     "name": "Pizza Hut",
     "discription": "men",
     "price": "$23.90"
   },
   {
-    "id": 8,
+    "image": "/images/PopDishes/hummingbird-printed-t-shirt.jpg",
+    "name": "Pizza Hut",
+    "discription": "men",
+    "price": "$23.90"
+  },
+  {
+    "image": "/images/PopDishes/brown-bear-cushion.jpg",
+    "name": "Pizza Hut",
+    "discription": "men",
+    "price": "$23.90"
+  },
+  {
+    "image": "/images/PopDishes/hummingbird-cushion.jpg",
+    "name": "Pizza Hut",
+    "discription": "men",
+    "price": "$23.90"
+  },
+  {
+    "image": "/images/PopDishes/hummingbird-printed-t-shirt.jpg",
+    "name": "Pizza Hut",
+    "discription": "men",
+    "price": "$23.90"
+  },
+  {
+    "image": "/images/PopDishes/mountain-fox-cushion.jpg",
+    "name": "Pizza Hut",
+    "discription": "men",
+    "price": "$23.90"
+  },
+  {
+    "image": "/images/PopDishes/mug-today-is-a-good-day.jpg",
+    "name": "Pizza Hut",
+    "discription": "men",
+    "price": "$23.90"
+  },
+  {
+    "image": "/images/PopDishes/brown-bear-printed-sweater.jpg",
+    "name": "Pizza Hut",
+    "discription": "men",
+    "price": "$23.90"
+  },
+  {
+    "image": "/images/PopDishes/mug-today-is-a-good-day.jpg",
+    "name": "Pizza Hut",
+    "discription": "men",
+    "price": "$23.90"
+  },
+  {
     "image": "/images/PopDishes/hummingbird-printed-t-shirt.jpg",
     "name": "Pizza Hut",
     "discription": "men",

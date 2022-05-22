@@ -6,7 +6,7 @@ function Footer() {
       <footer className="py-28 bg-black">
         <section className="flex items-center">
           <div className="hr"></div>
-          <img className="px-6" src="/images/Logo.jpg" alt="" />
+          <img className="px-6" src="/images/logo-min.png" alt="" />
           <div className="hr"></div>
         </section>
 
@@ -17,37 +17,43 @@ function Footer() {
                 <h3 className="font-extrabold text-2xl">Address</h3>
               </li>
               <li>
-                570 8th Ave, <br /> New York, NY 10018 United States
+                Achaari Couple
               </li>
             </ul>
 
             <ul className="flex_23 p-8 text-center leading-8">
               <li>
-                <h3 className="font-extrabold text-2xl">BOOK A TABLE</h3>
+                <h3 className="font-extrabold text-2xl">Order through call</h3>
               </li>
-              <li>Dogfood och Sliders foodtruck. Under Om oss kan ni läsa</li>
+              <li>Manual order will take place</li>
               <li className="text-yellow-500 text-xl font-extrabold mt-4">
-                (850) 435-4155
+                9883097200
               </li>
             </ul>
 
             <ul className="flex_23 p-8 text-center leading-8">
               <li>
-                <h3 className="font-extrabold text-2xl">OPENING HOURS</h3>
+                <h3 className="font-extrabold text-2xl">Page Links</h3>
               </li>
-              <li>Monday - Friday: 8am - 4pm</li>
-              <li>Saturday: 9am - 5pm</li>
+              <nav>
+                <ul>
+                  <li>Contact Us</li>
+                  <li>FAQ's</li>
+                  <li>Shipping & Delivery Policy</li>
+                  <li>Refund & Cancellation Policy</li>
+                  <li>Terms & Conditions</li>
+                </ul>
+              </nav>
             </ul>
 
             <ul className="flex_23 p-8 text-center leading-8">
               <li>
-                <h3 className="font-extrabold text-2xl">NEWSLETTER</h3>
+                <h3 className="font-extrabold text-2xl">Online Orders</h3>
               </li>
               <li>
-                You may unsubscribe at any moment. For that purpose, please find
-                our contact info in the legal notice.
+                We will soon start our online order service
               </li>
-              <li>Saturday: 9am - 5pm</li>
+              <li>For manual order please call us on our contact number</li>
             </ul>
           </nav>
         </section>
