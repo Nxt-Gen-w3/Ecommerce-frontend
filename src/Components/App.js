@@ -16,6 +16,7 @@ import SignUp from "./SignUp";
 import Individual from "./Individual";
 import Cart from "./Cart";
 import AllItems from "./AllItems";
+import FAQ from "./FAQ";
 
 function App() {
   return (
@@ -44,6 +45,9 @@ function App() {
           </Route>
           <Route path="/allItems" exact>
             <AllItems />
+          </Route>
+          <Route path="/FAQ" exact>
+            <FAQ />
           </Route>
           <Route path="/:id" exact>
             <Individual />

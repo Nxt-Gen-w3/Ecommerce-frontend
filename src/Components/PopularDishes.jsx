@@ -20,12 +20,17 @@ function PopularDishes() {
         <section className="flex flex-wrap justify-between popular_dishes">
           {PopDishes.map((each, index) => (
             <>
-              <article className="flex_23 border-2 p-3">
+              <article className="flex_23 p-3 border mt-3 rounded-lg ">
                 <NavLink to={`/${index}`}>
                   <img src={each.image} alt="" />
-                  <div className="flex justify-between">
+                  <img
+                    className="text-xs hidden"
+                    src="/images/PopDishes/hummingbird-cushion (1).jpg"
+                    alt=""
+                  />
+                  <div className="flex justify-between leading-6 mt-4">
                     <div>
-                      <h5>{each.name}</h5>
+                      <h5 className="font-extrabold">{each.name}</h5>
                       <p>{each.discription}</p>
                       <h3>{each.price}</h3>
                     </div>
