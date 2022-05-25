@@ -46,7 +46,7 @@ function App() {
           <Route path="/allItems" exact>
             <AllItems />
           </Route>
-          <Route path="/FAQ" exact>
+          <Route path="/faq" exact>
             <FAQ />
           </Route>
           <Route path="/:id" exact>

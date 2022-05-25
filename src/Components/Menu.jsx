@@ -21,35 +21,35 @@ function Menu() {
             centerMode
           >
             <div className="image">
-              <img src="/images/menu/pickle-2.png" alt="" />
+              <img src="/images/menu/ac-pk-4.png" alt="" />
               <p>Mini Pack</p>
             </div>
             <div className="image">
-              <img src="/images/menu/pickle-2.png" alt="" />
+              <img src="/images/menu/ac-pk-4.png" alt="" />
               <p>Pizza</p>
             </div>
             <div className="image">
-              <img src="/images/menu/pickle-2.png" alt="" />
+              <img src="/images/menu/ac-pk-1.png" alt="" />
               <p>Chicken</p>
             </div>
             <div className="image">
-              <img src="/images/menu/pickle-2.png" alt="" />
+              <img src="/images/menu/ac-pk-2.png" alt="" />
               <p>Box Meals</p>
             </div>
             <div className="image">
-              <img src="/images/menu/pickle-2.png" alt="" />
+              <img src="/images/menu/ac-pk-3.png" alt="" />
               <p>Drinks</p>
             </div>
             <div className="image">
-              <img src="/images/menu/pickle-2.png" alt="" />
+              <img src="/images/menu/ac-pk-4.png" alt="" />
               <p>Single Product</p>
             </div>
             <div className="image">
-              <img src="/images/menu/pickle-2.png" alt="" />
+              <img src="/images/menu/ac-pk-2.png" alt="" />
               <p>Buckets</p>
             </div>
             <div className="image">
-              <img src="/images/menu/pickle-2.png" alt="" />
+              <img src="/images/menu/ac-pk-4.png" alt="" />
               <p>Sauces</p>
             </div>
           </Carousel>
