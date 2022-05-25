@@ -22,7 +22,14 @@ function PopularDishes() {
             <>
               <article className="flex_23 border-2 p-3">
                 <NavLink to={`/${index}`}>
-                  <img src={each.image} alt="" />
+                 
+                  <div className="relative ">
+                    <div className="  h-44 w-74 bg-orange-100 rounded-2xl ">
+                      <div className="absolute flex justify-center items-center w-36 h-36  left-16 p-2  ">
+                        <img src="/images/menu/ac-pk-4.png" alt="" className="w-full h-full " />
+                      </div>
+                    </div>
+                  </div>
                   <div>
                     <div className=" flex justify-between">
                       <h5 className="m-2 text-orange-500  font-bold">{each.name}</h5>

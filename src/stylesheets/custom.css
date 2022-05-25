@@ -97,21 +97,22 @@ table {
 }
 /* Hero Component */
 .hero_bg{
-  background: url("../../public/images/hero-bg-2.png") no-repeat;
+  background: url("../../public/images/hero-bg-main.png") no-repeat;
   background-size: cover;
-  height: 94vh;
+  background-position: right;
+  height:96vh;
 }
 .image{
   padding-bottom: 1rem ;
 }
 .offer_img1, .offer_img2, .offer_img3{
-  background: url("../../public/images/offers/leo_two.png") no-repeat;
+  background: url("../../public/images/offers/ac-offer-1.png") no-repeat;
   background-size: cover;
   height: 30vh;
   /* border: 1px solid rgba(128, 128, 128, 0.248); */
 }
 .offer_img2{
-  background: url("../../public/images/offers/leo_one.png") no-repeat;
+  background: url("../../public/images/offers/ac-offer-2.png") no-repeat;
   background-size: cover;
   
 }
@@ -128,18 +129,18 @@ table {
 }
 /* hotDog banner */
 .hotdog_banner{
-  background: url("../../public/images/hotdog.jpg") no-repeat;
+  background: url("../../public/images/ac-bg-h2.png") no-repeat;
   background-size: cover;
   height: 60vh;
 }
 /* Top Receipes */
 .super_delicious{
-  background: url(../../public/images/super_delicious.jpg) no-repeat;
+  background: url(../../public/images/ac-bg-h3.png) no-repeat;
   background-size: cover;
-  height: 65vh;
+  height: 80vh;
 }
 .Description{
-  background: url(../../public/images/bg-desc.jpg) no-repeat;
+  background: url(../../public/images/banner.png) no-repeat;
   background-size: contain;
   height: 40vh;
 }
