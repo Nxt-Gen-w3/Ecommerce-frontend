@@ -3,7 +3,7 @@ import PopDishes from "../JsonFiles/PopDishes.json";
 import { NavLink } from "react-router-dom";
 
 function PopularDishes() {
-  const items = ["Pickles","Dry Fruits"];
+  const items = ["Pickles", "Dry Fruits"];
   return (
     <>
       <div className="container py-20">
@@ -20,7 +20,7 @@ function PopularDishes() {
         <section className="flex flex-wrap justify-between popular_dishes">
           {PopDishes.map((each, index) => (
             <>
-              <article className="flex_23 border-2 p-3">
+              <article className="flex_23 p-3 border mt-3 rounded-lg ">
                 <NavLink to={`/${index}`}>
                  
                   <div className="relative ">
@@ -32,7 +32,9 @@ function PopularDishes() {
                   </div>
                   <div>
                     <div className=" flex justify-between">
-                      <h5 className="m-2 text-orange-500  font-bold">{each.name}</h5>
+                      <h5 className="m-2 text-orange-500  font-bold">
+                        {each.name}
+                      </h5>
                       {/* <p>{each.discription}</p> */}
                       <h3 className="m-2">{each.price}</h3>
                     </div>
