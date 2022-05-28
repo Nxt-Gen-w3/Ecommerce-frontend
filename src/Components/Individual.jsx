@@ -204,18 +204,34 @@ function Individual(props) {
           )}
           {data == "Reviews" ? (
             <>
-              <div className="py-8">
-                <h5 className="text-sm font-extrabold">Grade</h5>
-                <div className="my-2">
-                  <i className="fa-solid fa-star text-xs text-yellow-400"></i>
-                  <i className="fa-solid fa-star text-xs text-yellow-400"></i>
-                  <i className="fa-solid fa-star text-xs text-yellow-400"></i>
-                  <i className="fa-solid fa-star text-xs text-yellow-400"></i>
-                  <i className="fa-solid fa-star text-xs text-gray-200"></i>
+              <section>
+                  <div className="py-8">
+                  <h5 className="text-sm font-extrabold">Grade</h5>
+                  <div className="my-2">
+                    <i className="fa-solid fa-star text-md hover:text-yellow-300 text-gray-200"></i>
+                    <i className="fa-solid fa-star text-md hover:text-yellow-300 text-gray-200"></i>
+                    <i className="fa-solid fa-star text-md hover:text-yellow-300 text-gray-200"></i>
+                    <i className="fa-solid fa-star text-md hover:text-yellow-300 text-gray-200"></i>
+                    <i className="fa-solid fa-star text-md text-gray-200"></i>
+                  </div>
+                  <h4 className="text-xs font-extrabold">thao pham 09/10/2020</h4>
                 </div>
-                <h4 className="text-xs font-extrabold">thao pham 09/10/2020</h4>
-              </div>
-              <hr className="my-5 opacity-50" />
+                <hr className="my-5 opacity-50" />
+              </section>
+              <section>
+                <h4 className="m-2 font-bold">Give your review:</h4>
+                <div className="my-2">
+                    <i className="fa-solid fa-star text-md hover:text-yellow-300 text-gray-200"></i>
+                    <i className="fa-solid fa-star text-md hover:text-yellow-300 text-gray-200"></i>
+                    <i className="fa-solid fa-star text-md hover:text-yellow-300 text-gray-200"></i>
+                    <i className="fa-solid fa-star text-md hover:text-yellow-300 text-gray-200"></i>
+                    <i className="fa-solid fa-star text-md text-gray-200"></i>
+                  </div>
+                <div className="flex flex-col items-start">
+                  <textarea placeholder="Write your review here" name="review" className=" rounded-sm border-2 border-orange-200 p-2 w-1/2 " />
+                  <button className="m-2 bg-black text-white p-2">Submit</button>
+                </div>
+              </section>
             </>
           ) : (
             ""
@@ -223,8 +239,8 @@ function Individual(props) {
         </div>
       </div>
 
-      <div className="container py-10">
-        <h2 className="text-3xl font-extrabold text-center ">
+      <div className="container  py-10">
+        <h2 className="text-3xl mt-5 font-extrabold text-center ">
           YOU MIGHT ALSO LIKE
         </h2>
         <section className="flex flex-wrap justify-between popular_dishes">

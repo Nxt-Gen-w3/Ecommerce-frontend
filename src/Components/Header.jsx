@@ -16,7 +16,7 @@ function Header() {
               Home 
             </li>
             <li className="hover:text-yellow-500 transition-all font-extrabold cursor-pointer">
-              About
+              <NavLink to="/about" activeClassName="active">About</NavLink>
             </li>
             <li className="hover:text-yellow-500 transition-all font-extrabold cursor-pointer">
               Products <i className="fa-solid fa-caret-down"></i>
