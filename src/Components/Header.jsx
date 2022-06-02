@@ -13,7 +13,9 @@ function Header() {
 
           <ul className="flex flex_38 justify-between header_option">
             <li className="hover:text-yellow-500 transition-all font-extrabold cursor-pointer home_sub_display">
-              Home 
+              <NavLink to="/" activeClassName="text-red-900">
+                Home
+              </NavLink>
             </li>
             <li className="hover:text-yellow-500 transition-all font-extrabold cursor-pointer">
               About
@@ -21,9 +23,11 @@ function Header() {
             <li className="hover:text-yellow-500 transition-all font-extrabold cursor-pointer">
               Products <i className="fa-solid fa-caret-down"></i>
             </li>
-            {/* <li className="hover:text-yellow-500 transition-all font-extrabold cursor-pointer">
-              Portfolio
-            </li> */}
+            <li className="hover:text-yellow-500 transition-all font-extrabold cursor-pointer">
+              <NavLink to="/FAQ" activeClassName="text-red-900">
+                FAQ
+              </NavLink>
+            </li>
             <li className="hover:text-yellow-500 transition-all font-extrabold cursor-pointer">
               Contact
             </li>
