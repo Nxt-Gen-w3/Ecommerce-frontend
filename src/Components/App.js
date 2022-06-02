@@ -17,6 +17,7 @@ import Individual from "./Individual";
 import Cart from "./Cart";
 import AllItems from "./AllItems";
 import FAQ from "./FAQ";
+import About from './About'
 
 function App() {
   return (
@@ -43,10 +44,13 @@ function App() {
           <Route path="/cart" exact>
             <Cart />
           </Route>
+          <Route path="/about" >
+               <About />
+          </Route>
           <Route path="/allItems" exact>
             <AllItems />
           </Route>
-          <Route path="/FAQ" exact>
+          <Route path="/faq" exact>
             <FAQ />
           </Route>
           <Route path="/:id" exact>

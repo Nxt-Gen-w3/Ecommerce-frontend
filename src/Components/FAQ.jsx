@@ -8,25 +8,29 @@ function FAQ() {
 
   let questions = [
     {
-      Q: "Who is it for?",
-      A: "Recent college graduates, students taking gap year, dropouts, professionals looking to switch careers, anyone learning web development but needs right environment and guidance. No prior programming knowledge required.",
+      Q: "Why Achaari Couple?",
+      A: "We provide home-made pickles which is free of preservatives.",
     },
     {
-      Q: "Does AltCampus help me get a job?",
-      A: "Yes. All we can. We help you at every stage, help you build strong portfolio, prepare for interviews, put you in touch with companies for interview.",
+      Q: "Do we have any return or refund policy?",
+      A: "No, we don’t have any return or refund policy as of now.",
     },
     {
-      Q: "How does the entire process work?",
-      A: "You can read about it here - How it works.",
+      Q: "What is the delivery time?",
+      A: "We try our best to deliver the products within 5–7 days of your order. SMS and Email is sent on the date of fulfillment, ready to dispatch, shipping and delivery - the exact time of delivery cannot be predicted but usually get delivered within a week or two.However, in certain situations we will not be able to deliver within 5-7 days. Any extra ordinary delay would be intimated to you separately via an Email and SMS. Achaari Couple reserves the right to cancel any order, if the delivery location is blacklisted in our delivery system – amount paid by the customer will be duly refunded.",
     },
     {
-      Q: "Is this course self-paced or batched?",
-      A: "This program follows a blended approach. Students can move at their own pace, however they will be matched with peers learning same concepts.",
+      Q: "What all cities do we deliver in?",
+      A: "We deliver our products throughout India.",
     },
+    {
+      Q: "What products are we currently dealing in?",
+      A: "We are currently dealing in home-made pickles, dry fruits & mouth fresheners. We intend to soon launch more products.",
+    }
   ];
   return (
     <>
-      <div className="FAQ">
+      <div className="FAQ m-8">
         <section className="container flex justify-center items-center h-full">
           <div className="w-8/12 border-2 m-auto transition-all ">
             <h2 className="text-2xl font-extrabold">
@@ -42,7 +46,7 @@ function FAQ() {
                   <p>{state === index ? <span>👆</span> : <span>👇</span>}</p>
                 </div>
                 {index == state ? (
-                  <p className="mt-4 border p-2 py-4 bg-slate-200 transition-all">
+                  <p className="mt-4 leading-5 border p-2 py-4 bg-slate-200 transition-all">
                     A. {each.A}
                   </p>
                 ) : (
