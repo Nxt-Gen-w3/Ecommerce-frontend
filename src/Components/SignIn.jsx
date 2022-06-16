@@ -10,18 +10,21 @@ function SignIn(props) {
   }, []);
 
   const handleLogin = () => {
-    fetch("https://octopus-app-cgw6x.ondigitalocean.app/api/v1/users/login", {
-      method: "POST", // or 'PUT'
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        user: {
-          email: login.email,
-          password: login.password,
+    fetch(
+      "https://achaari-couple-k28px.ondigitalocean.app/api/v1/users/login",
+      {
+        method: "POST", // or 'PUT'
+        headers: {
+          "Content-Type": "application/json",
         },
-      }),
-    })
+        body: JSON.stringify({
+          user: {
+            email: login.email,
+            password: login.password,
+          },
+        }),
+      }
+    )
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);

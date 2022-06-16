@@ -14,7 +14,7 @@ function SignUp(props) {
 
   const handleRegister = () => {
     fetch(
-      "https://octopus-app-cgw6x.ondigitalocean.app/api/v1/users/register",
+      "https://achaari-couple-k28px.ondigitalocean.app/api/v1/users/register",
       {
         method: "POST", // or 'PUT'
         headers: {

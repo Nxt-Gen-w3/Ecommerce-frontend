@@ -9,7 +9,7 @@ function PopularDishes() {
   }, []);
 
   let handleFetch = () => {
-    fetch(`https://octopus-app-cgw6x.ondigitalocean.app/api/v1/products/`)
+    fetch(`https://achaari-couple-k28px.ondigitalocean.app/api/v1/products`)
       .then((res) => res.json())
       .then((data) => {
         setProductData(data);

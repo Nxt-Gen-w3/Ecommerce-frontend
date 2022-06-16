@@ -29,12 +29,15 @@ function App() {
 
   const handleUser = (storagekey) => {
     if (storagekey) {
-      fetch(`https://octopus-app-cgw6x.ondigitalocean.app/api/v1/users/user`, {
-        method: "GET",
-        headers: {
-          authorization: `${storagekey}`,
-        },
-      })
+      fetch(
+        `https://achaari-couple-k28px.ondigitalocean.app//api/v1/users/user`,
+        {
+          method: "GET",
+          headers: {
+            authorization: `${storagekey}`,
+          },
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           setUserData(data.user);
