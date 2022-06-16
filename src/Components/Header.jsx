@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-function Header() {
+function Header(props) {
+  var { userData } = props;
+  console.log(userData, "that's me");
   return (
     <>
       <header className="p-5 border-b-2 header">
@@ -18,7 +20,9 @@ function Header() {
               </NavLink>
             </li>
             <li className="hover:text-yellow-500 transition-all font-extrabold cursor-pointer">
-              <NavLink to="/about" activeClassName="active">About</NavLink>
+              <NavLink to="/about" activeClassName="active">
+                About
+              </NavLink>
             </li>
             <li className="hover:text-yellow-500 transition-all font-extrabold cursor-pointer">
               Products <i className="fa-solid fa-caret-down"></i>
@@ -42,7 +46,7 @@ function Header() {
             </li>
           </ul>
 
-          <ul className="flex flex_12 header_icons">
+          <ul className="flex flex_12 header_icons items-start">
             <li>
               <NavLink to="/cart">
                 <i className="fa-solid fa-cart-shopping block ml-5 border-2 p-3 bg-green-400 rounded-full"></i>
@@ -51,10 +55,17 @@ function Header() {
             {/* <li>
               <i className="fa-solid fa-magnifying-glass block ml-5 border-2 p-3 bg-green-400 rounded-full"></i>
             </li> */}
-            <li>
-              <NavLink to="/signin">
-                <i className="fa-solid fa-user block ml-5 border-2 p-3 bg-green-400 rounded-full"></i>
-              </NavLink>
+            <li className="">
+              {userData ? (
+                <>
+                  <i className="fa-solid fa-user block ml-5 border-2 p-3 bg-green-400 rounded-full"></i>
+                  <i className="ml-6 mt-5">{userData.username}</i>
+                </>
+              ) : (
+                <NavLink to="/signin">
+                  <i className="fa-solid fa-user block ml-5 border-2 p-3 bg-green-400 rounded-full"></i>
+                </NavLink>
+              )}
             </li>
           </ul>
         </nav>

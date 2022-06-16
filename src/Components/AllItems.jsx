@@ -1,7 +1,9 @@
 import React from "react";
 import DishCard from "./DishCard";
 import PopDishes from "../JsonFiles/PopDishes.json";
-function AllItems() {
+import { withRouter } from "react-router-dom";
+function AllItems(props) {
+  console.log(props.userData);
   return (
     <>
       <div className="container py-20">
@@ -26,4 +28,4 @@ function AllItems() {
     </>
   );
 }
-export default AllItems;
+export default withRouter(AllItems);

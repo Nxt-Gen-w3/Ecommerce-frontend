@@ -4,8 +4,21 @@ import PopDishes from "../JsonFiles/PopDishes.json";
 
 function Individual(props) {
   const [data, setData] = useState("Description");
+  const [individualData, setIndividualData] = useState(null);
+  console.log(props);
   const handleData = (e) => {
     setData(e);
+  };
+  useEffect(() => {
+    handleIndividule();
+  }, []);
+  const handleIndividule = () => {
+    const id = props.match.params.id;
+    fetch(`https://octopus-app-cgw6x.ondigitalocean.app/api/v1/products/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setIndividualData(data);
+      });
   };
 
   return (
@@ -51,11 +64,12 @@ function Individual(props) {
           </a>
         </div>
       </div>
+
       <div className="container flex justify-center py-10 column individual">
         <section className="flex_47">
           <img
-            className="Item_image"
-            src="images/PopDishes/brown-bear-cushion (1).jpg"
+            className="Item_image w-full"
+            src={individualData?.product?.productImage}
             alt=""
           />
         </section>
@@ -80,8 +94,7 @@ function Individual(props) {
             </h3>
             <small className="text-sm">($10.00 price per unit)</small> <br />
             <span className="text-gray-800 text-xs">
-              Regular fit, round neckline, short sleeves. Made of extra long
-              staple pima cotton.
+              {individualData?.product?.description[0]}
             </span>
             <form action="">
               <fieldset>
@@ -90,8 +103,9 @@ function Individual(props) {
                   <input
                     type="number"
                     defaultValue="0"
-                    className="w-1/12 border ml-3 px-1"
+                    className="w-1/12 border ml-3 px-1 mr-3"
                   />
+                  <span>Grams</span>
                 </div>
                 <button className="border px-8 mt-3 bg-yellow-400 text-white font-extrabold round">
                   Add To Cart
@@ -205,7 +219,7 @@ function Individual(props) {
           {data == "Reviews" ? (
             <>
               <section>
-                  <div className="py-8">
+                <div className="py-8">
                   <h5 className="text-sm font-extrabold">Grade</h5>
                   <div className="my-2">
                     <i className="fa-solid fa-star text-md hover:text-yellow-300 text-gray-200"></i>
@@ -214,22 +228,30 @@ function Individual(props) {
                     <i className="fa-solid fa-star text-md hover:text-yellow-300 text-gray-200"></i>
                     <i className="fa-solid fa-star text-md text-gray-200"></i>
                   </div>
-                  <h4 className="text-xs font-extrabold">thao pham 09/10/2020</h4>
+                  <h4 className="text-xs font-extrabold">
+                    thao pham 09/10/2020
+                  </h4>
                 </div>
                 <hr className="my-5 opacity-50" />
               </section>
               <section>
                 <h4 className="m-2 font-bold">Give your review:</h4>
                 <div className="my-2">
-                    <i className="fa-solid fa-star text-md hover:text-yellow-300 text-gray-200"></i>
-                    <i className="fa-solid fa-star text-md hover:text-yellow-300 text-gray-200"></i>
-                    <i className="fa-solid fa-star text-md hover:text-yellow-300 text-gray-200"></i>
-                    <i className="fa-solid fa-star text-md hover:text-yellow-300 text-gray-200"></i>
-                    <i className="fa-solid fa-star text-md text-gray-200"></i>
-                  </div>
+                  <i className="fa-solid fa-star text-md hover:text-yellow-300 text-gray-200"></i>
+                  <i className="fa-solid fa-star text-md hover:text-yellow-300 text-gray-200"></i>
+                  <i className="fa-solid fa-star text-md hover:text-yellow-300 text-gray-200"></i>
+                  <i className="fa-solid fa-star text-md hover:text-yellow-300 text-gray-200"></i>
+                  <i className="fa-solid fa-star text-md text-gray-200"></i>
+                </div>
                 <div className="flex flex-col items-start">
-                  <textarea placeholder="Write your review here" name="review" className=" rounded-sm border-2 border-orange-200 p-2 w-1/2 " />
-                  <button className="m-2 bg-black text-white p-2">Submit</button>
+                  <textarea
+                    placeholder="Write your review here"
+                    name="review"
+                    className=" rounded-sm border-2 border-orange-200 p-2 w-1/2 "
+                  />
+                  <button className="m-2 bg-black text-white p-2">
+                    Submit
+                  </button>
                 </div>
               </section>
             </>
