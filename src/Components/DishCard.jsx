@@ -15,8 +15,12 @@ function DishCard(props) {
               <h4 className="m-1  text-orange-500 font-bold">
                 {each.productName}
               </h4>
-              <p className="m-1 font-semibold">{each.discription}</p>
-              <p className="m-1">{each.price}</p>
+              <p className="m-1 text-xs">
+                {each && each.description[0] != ""
+                  ? each.description[0].slice(2, 20) + " . . ."
+                  : "On The Way . . ."}{" "}
+              </p>
+              {/* <p className="m-1">{each.price}</p> */}
             </div>
           </div>
         </NavLink>
