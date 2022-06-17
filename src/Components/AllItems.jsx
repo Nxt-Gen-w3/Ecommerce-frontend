@@ -1,25 +1,28 @@
 import React from "react";
 import DishCard from "./DishCard";
 import PopDishes from "../JsonFiles/PopDishes.json";
-import { withRouter } from "react-router-dom";
+import { withRouter, NavLink } from "react-router-dom";
 function AllItems(props) {
-  console.log(props.userData);
+  const { allProducts } = props;
   return (
     <>
       <div className="container py-20">
         <section className="m-auto flex justify-between items-center flex-wrap">
-          {PopDishes.map((each, index) => (
+          {allProducts?.map((each, index) => (
             <>
               <article className="flex_23  mt-2 p-1.5 rounded-lg">
-                <div className="flex items-center shadow-md border p-2 rounded-lg">
-                  <img className="w-5/12" src={each.image} alt="" />
+                <NavLink to={`/${each._id}`}>
+                  <div className="flex items-center shadow-md border p-2 rounded-lg">
+                    <img className="w-5/12" src={each.productImage} alt="" />
 
-                  <div className="ml-8">
-                    <h4>{each.name}</h4>
-                    <p>{each.discription}</p>
-                    <p>{each.price}</p>
+                    <div className="ml-8">
+                      <h4>{each.productName}</h4>
+                      <p className="text-xs font-bold mt-2">
+                        {each.discription ? each.discription : "On The Way"}
+                      </p>
+                    </div>
                   </div>
-                </div>
+                </NavLink>
               </article>
             </>
           ))}

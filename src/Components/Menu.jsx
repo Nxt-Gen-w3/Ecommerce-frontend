@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import { withRouter } from "react-router-dom";
 
-function Menu() {
+function Menu(props) {
+  const { allProducts } = props;
   return (
     <>
       <div className="container">
@@ -20,7 +22,13 @@ function Menu() {
             centerSlidePercentage={10}
             centerMode
           >
-            <div className="image">
+            {allProducts?.map((each) => (
+              <div className="image">
+                <img src={each.productImage} alt="" />
+                <p>{each.productName}</p>
+              </div>
+            ))}
+            {/* <div className="image">
               <img src="/images/menu/ac-pk-4.png" alt="" />
               <p>Mini Pack</p>
             </div>
@@ -51,11 +59,11 @@ function Menu() {
             <div className="image">
               <img src="/images/menu/ac-pk-4.png" alt="" />
               <p>Sauces</p>
-            </div>
+            </div> */}
           </Carousel>
         </section>
       </div>
     </>
   );
 }
-export default Menu;
+export default withRouter(Menu);

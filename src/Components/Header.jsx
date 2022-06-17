@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 function Header(props) {
   var { userData } = props;
-  console.log(userData, "that's me");
   return (
     <>
       <header className="p-5 border-b-2 header">
@@ -57,10 +56,18 @@ function Header(props) {
             </li> */}
             <li className="">
               {userData ? (
-                <>
-                  <i className="fa-solid fa-user block ml-5 border-2 p-3 bg-green-400 rounded-full"></i>
-                  <i className="ml-6 mt-5">{userData.username}</i>
-                </>
+                <article className="flex flex-col items-center px-4">
+                  <img
+                    className="rounded-full w-10 h-10"
+                    src={
+                      userData && userData.image
+                        ? userData.image
+                        : "https://image.shutterstock.com/image-vector/male-profile-picture-placeholder-260nw-176551589.jpg"
+                    }
+                    alt=""
+                  />
+                  <p className="mt-1 ml-1">{userData.username}</p>
+                </article>
               ) : (
                 <NavLink to="/signin">
                   <i className="fa-solid fa-user block ml-5 border-2 p-3 bg-green-400 rounded-full"></i>

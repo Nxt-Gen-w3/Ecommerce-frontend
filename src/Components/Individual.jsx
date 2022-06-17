@@ -11,8 +11,8 @@ function Individual(props) {
     review: "",
     rating: 0,
   });
+  const { allProducts } = props;
 
-  console.log(reviews);
   const handleData = (e) => {
     setData(e);
   };
@@ -29,7 +29,6 @@ function Individual(props) {
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);
-        console.log(reviews);
       });
   };
 
@@ -57,7 +56,6 @@ function Individual(props) {
   };
 
   const handleReviewPosts = () => {
-    console.log(props);
     let id = props.match.params.id;
     let storageKey = localStorage.getItem("userToken");
     if (storageKey) {
@@ -164,23 +162,23 @@ function Individual(props) {
                 ? individualData?.product?.price[0]
                     .split(",")
                     .slice(0, 1)
-                    .join("")
+                    .join("") + " Rs"
                 : qunty ==
                   individualData?.product?.quantity[0].split(",").slice(1, 2)
                 ? individualData?.product?.price[0]
                     .split(",")
                     .slice(1, 2)
-                    .join("")
+                    .join("") + " Rs"
                 : qunty ==
                   individualData?.product?.quantity[0].split(",").slice(2, 3)
                 ? individualData?.product?.price[0]
                     .split(",")
                     .slice(2, 3)
-                    .join("")
+                    .join("") + " Rs"
                 : individualData?.product?.price[0]
                     .split(",")
                     .slice(0, 1)
-                    .join("")}
+                    .join("") + " Rs"}
             </h3>
             {}
             <small className="text-sm">($10.00 price per unit)</small> <br />
@@ -415,19 +413,22 @@ function Individual(props) {
         <h2 className="text-3xl mt-5 font-extrabold text-center ">
           YOU MIGHT ALSO LIKE
         </h2>
-        <section className="flex flex-wrap justify-between popular_dishes">
-          {PopDishes.map((each, index) => (
+        <section className="m-auto flex justify-between items-center flex-wrap my-6">
+          {allProducts?.map((each, index) => (
             <>
-              <article className="flex_23 p-3 border mt-4 rounded-xl leading-6">
-                <NavLink to={`/${index}`}>
-                  <img src={each.image} alt="" />
-                  <div className="flex justify-between ">
-                    <div>
-                      <h5 className="mt-2">{each.name}</h5>
-                      <p>{each.discription}</p>
-                      <h3>{each.price}</h3>
+              <article className="flex_23  mt-2 p-1.5 rounded-lg">
+                <NavLink to={`/${each._id}`}>
+                  <div className="flex items-center shadow-md border p-2 rounded-lg">
+                    <img className="w-5/12" src={each.productImage} alt="" />
+
+                    <div className="ml-8">
+                      <h4>{each.productName}</h4>
+                      <p className="text-xs font-bold mt-2">
+                        {each?.description
+                          ? each?.description[0].slice(2, 20) + ". . ."
+                          : "On The Way"}
+                      </p>
                     </div>
-                    <i className="fa-solid fa-layer-minus"></i>
                   </div>
                 </NavLink>
               </article>
