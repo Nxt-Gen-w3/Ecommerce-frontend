@@ -134,7 +134,7 @@ function Individual(props) {
         <section className="flex_47">
           <img
             className="Item_image w-full"
-            src={individualData?.product?.productImage}
+            src={individualData?.product?.productImageX}
             alt=""
           />
         </section>
@@ -181,7 +181,6 @@ function Individual(props) {
                     .join("") + " Rs"}
             </h3>
             {}
-            <small className="text-sm">($10.00 price per unit)</small> <br />
             <span className="text-gray-800 text-xs">
               {individualData?.product?.description[0]}
             </span>
@@ -193,12 +192,12 @@ function Individual(props) {
             <form action="" className="mt-4">
               <fieldset>
                 <div className="flex">
-                  <label htmlFor="">QUANTITY</label>
+                  <label htmlFor="" className="font-bold">QUANTITY</label>
                   <select
                     name="qunty"
                     onChange={handleChange}
                     id=""
-                    className="mr-2 ml-2"
+                    className="mr-2 ml-2 bg-gray-200"
                   >
                     <option
                       disabled
@@ -206,7 +205,7 @@ function Individual(props) {
                         .split(",")
                         .slice(0, 1)}
                     >
-                      select Quantity
+                      Select Quantity
                     </option>
                     <option
                       selected
@@ -254,16 +253,13 @@ function Individual(props) {
             </ul>
             <ul className="my-6">
               <li className="text-sm">
-                <i class="fa-solid fa-shield"></i> Security policy (edit with
-                Customer reassurance module){" "}
+                <i class="fa-solid fa-shield"></i> Security policy 
               </li>
               <li className="text-sm mt-2">
-                <i class="fa-solid fa-truck"></i> Delivery policy (edit with
-                Customer reassurance module)
+                <i class="fa-solid fa-truck"></i> Delivery policy 
               </li>
               <li className="text-sm mt-2">
-                <i class="fa-solid fa-right-left"></i> Return policy (edit with
-                Customer reassurance module)
+                <i class="fa-solid fa-right-left"></i> Return policy
               </li>
             </ul>
           </>

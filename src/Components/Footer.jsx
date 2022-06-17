@@ -46,7 +46,11 @@ function Footer() {
                   </li>
                   <li className=" hover:text-orange-500">Shipping & Delivery Policy</li>
                   <li className=" hover:text-orange-500">Refund & Cancellation Policy</li>
-                  <li className=" hover:text-orange-500">Terms & Conditions</li>
+                  <li className=" hover:text-orange-500">
+                    <NavLink to='/terms'>
+                      Terms & Conditions
+                    </NavLink>
+                  </li>
                 </ul>
               </nav>
             </ul>

@@ -6,9 +6,11 @@ function Header(props) {
     <>
       <header className="p-5 border-b-2 header">
         <nav className="container flex justify-between items-center">
-          <p className="flex_18">
+          <p className=" bg-yellow-300 p-2 items-center justify-center ">
             <NavLink to="/">
-              <img src="/images/logo-min.png" alt="logo" />
+              {/* <img src="/images/logo-min.png" alt="logo" /> */}
+              <h1 className="font-bold  font-mono text-xl  rounded-md text-orange-700">Achaari Couple</h1>
+              <span className=" text-xs italic font-bold">Maa Ke Haath Ka Swaad</span>
             </NavLink>
           </p>
 

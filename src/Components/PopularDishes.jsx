@@ -33,10 +33,10 @@ function PopularDishes() {
           {productData?.products
             ?.map((each, index) => (
               <>
-                <article className="flex_23 p-3 border mt-3 rounded-lg ">
+                <article className="flex_23 hover:animate-pulse  p-3 border mt-3 rounded-lg ">
                   <NavLink to={`/${each._id}`}>
                     <div className="relative ">
-                      <div className="  h-44 w-74 bg-orange-100 rounded-2xl ">
+                      <div className="  h-44 w-74 bg-orange-100 hover:bg-orange-500 rounded-2xl ">
                         <div className="absolute flex justify-center items-center w-36 h-36  left-16 p-2  ">
                           <img
                             src={each.productImage}
@@ -64,7 +64,7 @@ function PopularDishes() {
         </section>
 
         <section>
-          <button className="border p-4 px-10 m-auto mt-20 rounded-lg bg-yellow-500 transition-all font-extrabold block">
+          <button className="border  animate-bounce p-4 px-10 m-auto mt-20 rounded-lg bg-yellow-500 transition-all font-extrabold block">
             <NavLink to="/allItems">Show More</NavLink>
           </button>
         </section>
