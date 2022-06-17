@@ -47,12 +47,12 @@ function PopularDishes() {
                     </div>
                   </div>
                   <div>
-                    <div className=" flex justify-between">
-                      <h5 className="m-2 text-orange-500  font-bold">
+                    <div className=" ">
+                      <h5 className="m-2 text-orange-500 text-center font-bold mt-2">
                         {each.productName}
                       </h5>
 
-                      <h3 className="m-2">{each.price}</h3>
+                      {/* <h3 className="m-2">{each.price}</h3> */}
                     </div>
                     <i className="fa-solid fa-layer-minus"></i>
                   </div>
