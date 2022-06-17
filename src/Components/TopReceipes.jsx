@@ -1,12 +1,14 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 import topReceipes from "../JsonFiles/PopDishes.json";
 import DishCard from "./DishCard";
-function TopReceipes() {
+function TopReceipes(props) {
+  const { allProducts } = props;
   return (
     <>
       <div className="container flex justify-between py-10 column">
         <section className="flex_66">
-          <div className="flex justify-between items-center border ">
+          <div className="flex justify-between items-center border-b-2 ">
             <h2 className="text-4xl font-extrabold">Top Receipes</h2>
             <p>
               Show More{" "}
@@ -17,13 +19,13 @@ function TopReceipes() {
           </div>
 
           <div className="flex flex-wrap items-center justify-between mt-6 border-4">
-            {topReceipes
-              .map((each) => (
+            {allProducts
+              ?.map((each) => (
                 <>
                   <DishCard each={each} />
                 </>
               ))
-              .slice(0, 6)}
+              .slice(14, 20)}
           </div>
         </section>
         <section className="flex_32 super_delicious"></section>
@@ -31,4 +33,4 @@ function TopReceipes() {
     </>
   );
 }
-export default TopReceipes;
+export default withRouter(TopReceipes);

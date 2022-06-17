@@ -8,9 +8,7 @@ function SignUp(props) {
     password: "",
     image: "",
   });
-  useEffect(() => {
-    console.log(props);
-  }, []);
+  useEffect(() => {}, []);
 
   const handleRegister = () => {
     fetch(

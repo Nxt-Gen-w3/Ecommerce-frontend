@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 function Header(props) {
   var { userData } = props;
-  console.log(userData, "that's me");
   return (
     <>
       <header className="p-5 border-b-2 header">

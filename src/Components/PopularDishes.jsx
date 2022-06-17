@@ -15,7 +15,6 @@ function PopularDishes() {
         setProductData(data);
       });
   };
-  console.log(productData, "productdata");
   const items = ["Pickles", "Dry Fruits"];
   return (
     <>
@@ -31,35 +30,37 @@ function PopularDishes() {
         </section>
 
         <section className="flex flex-wrap justify-between popular_dishes">
-          {productData?.products?.map((each, index) => (
-            <>
-              <article className="flex_23 p-3 border mt-3 rounded-lg ">
-                <NavLink to={`/${each._id}`}>
-                  <div className="relative ">
-                    <div className="  h-44 w-74 bg-orange-100 rounded-2xl ">
-                      <div className="absolute flex justify-center items-center w-36 h-36  left-16 p-2  ">
-                        <img
-                          src={each.productImage}
-                          alt=""
-                          className="w-full h-full "
-                        />
+          {productData?.products
+            ?.map((each, index) => (
+              <>
+                <article className="flex_23 p-3 border mt-3 rounded-lg ">
+                  <NavLink to={`/${each._id}`}>
+                    <div className="relative ">
+                      <div className="  h-44 w-74 bg-orange-100 rounded-2xl ">
+                        <div className="absolute flex justify-center items-center w-36 h-36  left-16 p-2  ">
+                          <img
+                            src={each.productImage}
+                            alt=""
+                            className="w-full h-full "
+                          />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div>
-                    <div className=" ">
-                      <h5 className="m-2 text-orange-500 text-center font-bold mt-2">
-                        {each.productName}
-                      </h5>
+                    <div>
+                      <div className=" ">
+                        <h5 className="m-2 text-orange-500 text-center font-bold mt-2">
+                          {each.productName}
+                        </h5>
 
-                      {/* <h3 className="m-2">{each.price}</h3> */}
+                        {/* <h3 className="m-2">{each.price}</h3> */}
+                      </div>
+                      <i className="fa-solid fa-layer-minus"></i>
                     </div>
-                    <i className="fa-solid fa-layer-minus"></i>
-                  </div>
-                </NavLink>
-              </article>
-            </>
-          ))}
+                  </NavLink>
+                </article>
+              </>
+            ))
+            .slice(0, 12)}
         </section>
 
         <section>

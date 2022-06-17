@@ -21,11 +21,13 @@ import About from "./About";
 
 function App() {
   let [userData, setUserData] = useState(null);
+  const [allProducts, setallProducts] = useState(null);
 
   useEffect(() => {
     let storagekey = localStorage.getItem("userToken");
     handleUser(storagekey);
-  }, []);
+    handleAllProducts();
+  }, "");
 
   const handleUser = (storagekey) => {
     if (storagekey) {
@@ -44,6 +46,13 @@ function App() {
         });
     }
   };
+  const handleAllProducts = () => {
+    fetch(`https://achaari-couple-k28px.ondigitalocean.app/api/v1/products`)
+      .then((res) => res.json())
+      .then((data) => {
+        setallProducts(data?.products);
+      });
+  };
   return (
     <>
       <div>
@@ -51,11 +60,11 @@ function App() {
         <Switch>
           <Route path="/" exact>
             <Hero />
-            <Menu />
+            <Menu allProducts={allProducts} />
             <Offers />
             <PopularDishes />
             <HotDog />
-            <TopReceipes />
+            <TopReceipes allProducts={allProducts} />
             <Description />
             <LatestNews />
           </Route>
@@ -72,13 +81,13 @@ function App() {
             <About />
           </Route>
           <Route path="/allItems" exact>
-            <AllItems userData={userData} />
+            <AllItems allProducts={allProducts} />
           </Route>
           <Route path="/faq" exact>
             <FAQ />
           </Route>
           <Route path="/:id" exact>
-            <Individual />
+            <Individual allProducts={allProducts} />
           </Route>
 
           <Route path="*" exact>
