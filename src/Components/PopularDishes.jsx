@@ -2,7 +2,9 @@ import React from "react";
 import PopDishes from "../JsonFiles/PopDishes.json";
 import { NavLink } from "react-router-dom";
 
-function PopularDishes() {
+function PopularDishes()
+{
+  
   const items = ["Pickles", "Dry Fruits"];
   return (
     <>
