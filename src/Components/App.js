@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Description from "./Description";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -17,13 +17,37 @@ import Individual from "./Individual";
 import Cart from "./Cart";
 import AllItems from "./AllItems";
 import FAQ from "./FAQ";
-import About from './About'
+import About from "./About";
 
 function App() {
+  let [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    let storagekey = localStorage.getItem("userToken");
+    handleUser(storagekey);
+  }, []);
+
+  const handleUser = (storagekey) => {
+    if (storagekey) {
+      fetch(
+        `https://achaari-couple-k28px.ondigitalocean.app/api/v1/users/user`,
+        {
+          method: "GET",
+          headers: {
+            authorization: `${storagekey}`,
+          },
+        }
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          setUserData(data.user);
+        });
+    }
+  };
   return (
     <>
       <div>
-        <Header />
+        <Header userData={userData} />
         <Switch>
           <Route path="/" exact>
             <Hero />
@@ -44,11 +68,11 @@ function App() {
           <Route path="/cart" exact>
             <Cart />
           </Route>
-          <Route path="/about" >
-               <About />
+          <Route path="/about">
+            <About />
           </Route>
           <Route path="/allItems" exact>
-            <AllItems />
+            <AllItems userData={userData} />
           </Route>
           <Route path="/faq" exact>
             <FAQ />

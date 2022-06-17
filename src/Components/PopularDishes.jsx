@@ -1,10 +1,21 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 import PopDishes from "../JsonFiles/PopDishes.json";
 import { NavLink } from "react-router-dom";
 
-function PopularDishes()
-{
-  
+function PopularDishes() {
+  const [productData, setProductData] = useState(null);
+  useEffect(() => {
+    handleFetch();
+  }, []);
+
+  let handleFetch = () => {
+    fetch(`https://achaari-couple-k28px.ondigitalocean.app/api/v1/products`)
+      .then((res) => res.json())
+      .then((data) => {
+        setProductData(data);
+      });
+  };
+  console.log(productData, "productdata");
   const items = ["Pickles", "Dry Fruits"];
   return (
     <>
@@ -20,24 +31,27 @@ function PopularDishes()
         </section>
 
         <section className="flex flex-wrap justify-between popular_dishes">
-          {PopDishes.map((each, index) => (
+          {productData?.products?.map((each, index) => (
             <>
               <article className="flex_23 p-3 border mt-3 rounded-lg ">
-                <NavLink to={`/${index}`}>
-                 
+                <NavLink to={`/${each._id}`}>
                   <div className="relative ">
                     <div className="  h-44 w-74 bg-orange-100 rounded-2xl ">
                       <div className="absolute flex justify-center items-center w-36 h-36  left-16 p-2  ">
-                        <img src="/images/menu/ac-pk-4.png" alt="" className="w-full h-full " />
+                        <img
+                          src={each.productImage}
+                          alt=""
+                          className="w-full h-full "
+                        />
                       </div>
                     </div>
                   </div>
                   <div>
                     <div className=" flex justify-between">
                       <h5 className="m-2 text-orange-500  font-bold">
-                        {each.name}
+                        {each.productName}
                       </h5>
-                      {/* <p>{each.discription}</p> */}
+
                       <h3 className="m-2">{each.price}</h3>
                     </div>
                     <i className="fa-solid fa-layer-minus"></i>

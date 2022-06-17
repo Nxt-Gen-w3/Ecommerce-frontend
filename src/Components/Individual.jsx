@@ -4,8 +4,88 @@ import PopDishes from "../JsonFiles/PopDishes.json";
 
 function Individual(props) {
   const [data, setData] = useState("Description");
+  const [individualData, setIndividualData] = useState(null);
+  const [qunty, setQunty] = useState("");
+  const [reviews, setReviews] = useState(null);
+  const [reviewPost, setReviewPost] = useState({
+    review: "",
+    rating: 0,
+  });
+
+  console.log(reviews);
   const handleData = (e) => {
     setData(e);
+  };
+  useEffect(() => {
+    handleIndividule();
+    getReviews();
+  }, []);
+
+  const getReviews = () => {
+    const id = props.match.params.id;
+    fetch(
+      `https://achaari-couple-k28px.ondigitalocean.app/api/v1/products/${id}/reviews`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setReviews(data);
+        console.log(reviews);
+      });
+  };
+
+  const handleChange = (e) => {
+    setQunty(e.target.value);
+  };
+
+  const handleIndividule = () => {
+    const id = props.match.params.id;
+    fetch(
+      `https://achaari-couple-k28px.ondigitalocean.app/api/v1/products/${id}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setIndividualData(data);
+      });
+  };
+  const handleReviewChange = ({ target }) => {
+    const { name, value } = target;
+    setReviewPost({ [name]: value });
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    handleReviewPosts();
+  };
+
+  const handleReviewPosts = () => {
+    console.log(props);
+    let id = props.match.params.id;
+    let storageKey = localStorage.getItem("userToken");
+    if (storageKey) {
+      fetch(
+        `https://achaari-couple-k28px.ondigitalocean.app/api/v1/products/${id}/reviews`,
+        {
+          method: "POST", // or 'PUT'
+          headers: {
+            "Content-Type": "application/json",
+            authorization: `${storageKey}`,
+          },
+          body: JSON.stringify({
+            review: {
+              body: reviewPost.review,
+              rating: reviewPost.rating,
+              author: "",
+            },
+          }),
+        }
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("Success:", data);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    }
   };
 
   return (
@@ -51,17 +131,20 @@ function Individual(props) {
           </a>
         </div>
       </div>
+
       <div className="container flex justify-center py-10 column individual">
         <section className="flex_47">
           <img
-            className="Item_image"
-            src="images/PopDishes/brown-bear-cushion (1).jpg"
+            className="Item_image w-full"
+            src={individualData?.product?.productImage}
             alt=""
           />
         </section>
         <section className="flex_47 leading-8 p-2">
           <>
-            <h2 className="text-2xl font-extrabold">Achari Couple</h2>
+            <h2 className="text-2xl font-extrabold">
+              {individualData?.product?.productName}
+            </h2>
             <div className="flex mt-2">
               <p>Rating</p>
               <div className="ml-2">
@@ -76,22 +159,87 @@ function Individual(props) {
               <i className="fa-solid fa-notes"></i> Read Reveiws (1)
             </h4>
             <h3 className="text-yellow-500 text-4xl font-extrabold mt-4">
-              $23.90
+              {qunty ==
+              individualData?.product?.quantity[0].split(",").slice(0, 1)
+                ? individualData?.product?.price[0]
+                    .split(",")
+                    .slice(0, 1)
+                    .join("")
+                : qunty ==
+                  individualData?.product?.quantity[0].split(",").slice(1, 2)
+                ? individualData?.product?.price[0]
+                    .split(",")
+                    .slice(1, 2)
+                    .join("")
+                : qunty ==
+                  individualData?.product?.quantity[0].split(",").slice(2, 3)
+                ? individualData?.product?.price[0]
+                    .split(",")
+                    .slice(2, 3)
+                    .join("")
+                : individualData?.product?.price[0]
+                    .split(",")
+                    .slice(0, 1)
+                    .join("")}
             </h3>
+            {}
             <small className="text-sm">($10.00 price per unit)</small> <br />
             <span className="text-gray-800 text-xs">
-              Regular fit, round neckline, short sleeves. Made of extra long
-              staple pima cotton.
+              {individualData?.product?.description[0]}
             </span>
-            <form action="">
+            <p className="text-xs font-bold">
+              {individualData?.product?.tags.map((each) => (
+                <>{each}</>
+              ))}
+            </p>
+            <form action="" className="mt-4">
               <fieldset>
-                <div>
+                <div className="flex">
                   <label htmlFor="">QUANTITY</label>
-                  <input
-                    type="number"
-                    defaultValue="0"
-                    className="w-1/12 border ml-3 px-1"
-                  />
+                  <select
+                    name="qunty"
+                    onChange={handleChange}
+                    id=""
+                    className="mr-2 ml-2"
+                  >
+                    <option
+                      disabled
+                      value={individualData?.product?.quantity[0]
+                        .split(",")
+                        .slice(0, 1)}
+                    >
+                      select Quantity
+                    </option>
+                    <option
+                      selected
+                      value={individualData?.product?.quantity[0]
+                        .split(",")
+                        .slice(0, 1)}
+                    >
+                      {individualData?.product?.quantity[0]
+                        .split(",")
+                        .slice(0, 1)}
+                    </option>
+                    <option
+                      value={individualData?.product?.quantity[0]
+                        .split(",")
+                        .slice(1, 2)}
+                    >
+                      {individualData?.product?.quantity[0]
+                        .split(",")
+                        .slice(1, 2)}
+                    </option>
+                    <option
+                      value={individualData?.product?.quantity[0]
+                        .split(",")
+                        .slice(2, 3)}
+                    >
+                      {individualData?.product?.quantity[0]
+                        .split(",")
+                        .slice(2, 3)}
+                    </option>
+                  </select>
+                  <span>Grams</span>
                 </div>
                 <button className="border px-8 mt-3 bg-yellow-400 text-white font-extrabold round">
                   Add To Cart
@@ -161,16 +309,13 @@ function Individual(props) {
         </div>
         <hr />
 
-        <div className="h-48">
+        <div className="">
           {data === "Description" ? (
-            <p className="p-12 text-xs text-center leading-6">
-              Symbol of lightness and delicacy, the hummingbird evokes curiosity
-              and joy. Studio Design' PolyFaune collection features classic
-              products with colorful patterns, inspired by the traditional
-              japanese origamis. To wear with a chino or jeans. The sublimation
-              textile printing process provides an exceptional color rendering
-              and a color, guaranteed overtime.
-            </p>
+            <div className="mt-14">
+              {individualData?.product?.description_list.map((each) => (
+                <p className="p-2 text-sm text-center">{each}</p>
+              ))}
+            </div>
           ) : (
             ""
           )}
@@ -205,7 +350,7 @@ function Individual(props) {
           {data == "Reviews" ? (
             <>
               <section>
-                  <div className="py-8">
+                <div className="py-8">
                   <h5 className="text-sm font-extrabold">Grade</h5>
                   <div className="my-2">
                     <i className="fa-solid fa-star text-md hover:text-yellow-300 text-gray-200"></i>
@@ -214,22 +359,49 @@ function Individual(props) {
                     <i className="fa-solid fa-star text-md hover:text-yellow-300 text-gray-200"></i>
                     <i className="fa-solid fa-star text-md text-gray-200"></i>
                   </div>
-                  <h4 className="text-xs font-extrabold">thao pham 09/10/2020</h4>
+                  <h4 className="text-xs font-extrabold">
+                    thao pham 09/10/2020
+                  </h4>
                 </div>
                 <hr className="my-5 opacity-50" />
               </section>
               <section>
                 <h4 className="m-2 font-bold">Give your review:</h4>
                 <div className="my-2">
-                    <i className="fa-solid fa-star text-md hover:text-yellow-300 text-gray-200"></i>
-                    <i className="fa-solid fa-star text-md hover:text-yellow-300 text-gray-200"></i>
-                    <i className="fa-solid fa-star text-md hover:text-yellow-300 text-gray-200"></i>
-                    <i className="fa-solid fa-star text-md hover:text-yellow-300 text-gray-200"></i>
-                    <i className="fa-solid fa-star text-md text-gray-200"></i>
-                  </div>
-                <div className="flex flex-col items-start">
-                  <textarea placeholder="Write your review here" name="review" className=" rounded-sm border-2 border-orange-200 p-2 w-1/2 " />
-                  <button className="m-2 bg-black text-white p-2">Submit</button>
+                  <i className="fa-solid fa-star text-md hover:text-yellow-300 text-gray-200"></i>
+                  <i className="fa-solid fa-star text-md hover:text-yellow-300 text-gray-200"></i>
+                  <i className="fa-solid fa-star text-md hover:text-yellow-300 text-gray-200"></i>
+                  <i className="fa-solid fa-star text-md hover:text-yellow-300 text-gray-200"></i>
+                  <i className="fa-solid fa-star text-md text-gray-200"></i>
+                </div>
+                <form
+                  action=""
+                  className="flex flex-col items-start"
+                  onSubmit={handleSubmit}
+                >
+                  <textarea
+                    onChange={handleReviewChange}
+                    placeholder="Write your review here"
+                    name="review"
+                    value={reviewPost.review}
+                    className=" rounded-sm border-2 border-orange-200 p-2 w-1/2 "
+                  />
+                  <button className="m-2 bg-black text-white p-2">
+                    Submit
+                  </button>
+                </form>
+
+                <div className="mt-8 ">
+                  <h3 className="font-bold mb-2">Comments</h3>
+                  <hr />
+                  {reviews?.Reviews?.map((each) => (
+                    <>
+                      <article>
+                        <p className="my-3">{each.body}</p>
+                        {/* <small>{each.author}</small> */}
+                      </article>
+                    </>
+                  ))}
                 </div>
               </section>
             </>
