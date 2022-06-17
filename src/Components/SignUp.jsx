@@ -28,6 +28,15 @@ function SignUp(props) {
             bio: register.bio,
             image: register.image,
           },
+          // {
+          //   "user" : {
+          //     "email": "chinna@gmail.com",
+          //     "username": "chinna",
+          //     "password": "chinna",
+          //     "bio": "my bio",
+          //     "image": "https://pbs.twimg.com/profile_images/1459224609689989120/8sutwLM1_400x400.jpg"
+          //   }
+          // }
         }),
       }
     )

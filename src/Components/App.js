@@ -30,7 +30,7 @@ function App() {
   const handleUser = (storagekey) => {
     if (storagekey) {
       fetch(
-        `https://achaari-couple-k28px.ondigitalocean.app//api/v1/users/user`,
+        `https://achaari-couple-k28px.ondigitalocean.app/api/v1/users/user`,
         {
           method: "GET",
           headers: {

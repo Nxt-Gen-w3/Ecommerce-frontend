@@ -7,7 +7,10 @@ function Individual(props) {
   const [individualData, setIndividualData] = useState(null);
   const [qunty, setQunty] = useState("");
   const [reviews, setReviews] = useState(null);
-  const [review, setReview] = useState("");
+  const [reviewPost, setReviewPost] = useState({
+    review: "",
+    rating: 0,
+  });
 
   console.log(reviews);
   const handleData = (e) => {
@@ -46,31 +49,43 @@ function Individual(props) {
   };
   const handleReviewChange = ({ target }) => {
     const { name, value } = target;
-    setReview({ [name]: value });
+    setReviewPost({ [name]: value });
   };
   const handleSubmit = (event) => {
     event.preventDefault();
+    handleReviewPosts();
   };
 
   const handleReviewPosts = () => {
-    const id = props.match.params.id;
-    fetch(
-      `https://achaari-couple-k28px.ondigitalocean.app/api/v1/products/${id}/reviews`,
-      {
-        method: "POST", // or 'PUT'
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({}),
-      }
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Success:", data);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
+    console.log(props);
+    let id = props.match.params.id;
+    let storageKey = localStorage.getItem("userToken");
+    if (storageKey) {
+      fetch(
+        `https://achaari-couple-k28px.ondigitalocean.app/api/v1/products/${id}/reviews`,
+        {
+          method: "POST", // or 'PUT'
+          headers: {
+            "Content-Type": "application/json",
+            authorization: `${storageKey}`,
+          },
+          body: JSON.stringify({
+            review: {
+              body: reviewPost.review,
+              rating: reviewPost.rating,
+              author: "",
+            },
+          }),
+        }
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("Success:", data);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    }
   };
 
   return (
@@ -177,7 +192,7 @@ function Individual(props) {
                 <>{each}</>
               ))}
             </p>
-            <form action="">
+            <form action="" className="mt-4">
               <fieldset>
                 <div className="flex">
                   <label htmlFor="">QUANTITY</label>
@@ -360,6 +375,7 @@ function Individual(props) {
                   <i className="fa-solid fa-star text-md text-gray-200"></i>
                 </div>
                 <form
+                  action=""
                   className="flex flex-col items-start"
                   onSubmit={handleSubmit}
                 >
@@ -367,6 +383,7 @@ function Individual(props) {
                     onChange={handleReviewChange}
                     placeholder="Write your review here"
                     name="review"
+                    value={reviewPost.review}
                     className=" rounded-sm border-2 border-orange-200 p-2 w-1/2 "
                   />
                   <button className="m-2 bg-black text-white p-2">
