@@ -52,7 +52,7 @@ function Individual(props) {
         setIndividualData(data);
         setTimeout(() => {
           setSubLoading(false);
-        }, 7000);
+        }, 6000);
       });
   };
   const handleReviewChange = ({ target }) => {
