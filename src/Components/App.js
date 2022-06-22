@@ -24,6 +24,7 @@ function App() {
   let [userData, setUserData] = useState(null);
   const [allProducts, setallProducts] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [userLogged, setUserLogged] = useState(false);
 
   useEffect(() => {
     handleAllProducts();
@@ -32,6 +33,9 @@ function App() {
     setTimeout(() => {
       setLoading(false);
     }, 5000);
+    if (storagekey) {
+      setUserLogged(true);
+    }
   }, []);
 
   const handleUser = (storagekey) => {
@@ -87,6 +91,7 @@ function App() {
           userData={userData}
           handleUser={handleUser}
           setUserData={setUserData}
+          setUserLogged={setUserLogged}
         />
         <Switch>
           <Route path="/" exact>
@@ -100,7 +105,11 @@ function App() {
             <LatestNews />
           </Route>
           <Route path="/signin" exact>
-            <SignIn loading={loading} handleUser={handleUser} />
+            <SignIn
+              loading={loading}
+              setUserLogged={setUserLogged}
+              handleUser={handleUser}
+            />
           </Route>
           <Route path="/signup" exact>
             <SignUp loading={loading} />
@@ -125,7 +134,7 @@ function App() {
             <FAQ />
           </Route>
           <Route path="/:id" exact>
-            <Individual allProducts={allProducts} />
+            <Individual allProducts={allProducts} userLogged={userLogged} />
           </Route>
 
           <Route path="*" exact>

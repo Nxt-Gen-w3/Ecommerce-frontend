@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from "react";
 import { NavLink, withRouter } from "react-router-dom";
 function SignIn(props) {
-  const { handleUser } = props;
+  const { handleUser, setUserLogged } = props;
   const [loading, setLoading] = useState(true);
   const [login, setLogin] = useState({
     email: "",
@@ -40,6 +40,7 @@ function SignIn(props) {
         if (storagekey) {
           handleUser(storagekey);
         }
+        setUserLogged(true);
       })
       .catch((error) => {
         console.error("Error:", error);

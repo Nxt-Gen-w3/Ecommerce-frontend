@@ -3,16 +3,18 @@ import { NavLink, withRouter } from "react-router-dom";
 import PopDishes from "../JsonFiles/PopDishes.json";
 
 function Individual(props) {
+  const { allProducts, userLogged } = props;
   const [data, setData] = useState("Description");
   const [individualData, setIndividualData] = useState(null);
   const [qunty, setQunty] = useState("");
   const [reviews, setReviews] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [subLoading, setSubLoading] = useState(true);
   const [reviewPost, setReviewPost] = useState({
     review: "",
     rating: 0,
     author: "",
   });
-  const { allProducts } = props;
 
   const handleData = (e) => {
     setData(e);
@@ -20,8 +22,10 @@ function Individual(props) {
   useEffect(() => {
     handleIndividule();
     getReviews();
-    console.log(reviews, "reviews");
-  }, reviews);
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+  }, [individualData]);
 
   const getReviews = () => {
     const id = props.match.params.id;
@@ -46,6 +50,9 @@ function Individual(props) {
       .then((res) => res.json())
       .then((data) => {
         setIndividualData(data);
+        setTimeout(() => {
+          setSubLoading(false);
+        }, 7000);
       });
   };
   const handleReviewChange = ({ target }) => {
@@ -83,12 +90,27 @@ function Individual(props) {
         .then((response) => response.json())
         .then((data) => {
           console.log("Success:", data);
+          getReviews();
         })
         .catch((error) => {
           console.error("Error:", error);
         });
     }
   };
+  if (loading) {
+    return (
+      <div className="Loader-Sub flex justify-center items-center">
+        <lottie-player
+          src="https://assets3.lottiefiles.com/packages/lf20_AQEOul.json"
+          background="transparent"
+          speed="1"
+          style={{ width: "300px", height: "300px" }}
+          loop
+          autoplay
+        ></lottie-player>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -136,11 +158,24 @@ function Individual(props) {
 
       <div className="container flex justify-center py-10 column individual">
         <section className="flex_47">
-          <img
-            className="Item_image w-full"
-            src={individualData?.product?.productImageX}
-            alt=""
-          />
+          {subLoading ? (
+            <div className="Loader-Sub flex justify-center items-center">
+              <lottie-player
+                src="https://assets3.lottiefiles.com/packages/lf20_AQEOul.json"
+                background="transparent"
+                speed="1"
+                style={{ width: "300px", height: "300px" }}
+                loop
+                autoplay
+              ></lottie-player>
+            </div>
+          ) : (
+            <img
+              className="Item_image w-full"
+              src={individualData?.product?.productImageX}
+              alt=""
+            />
+          )}
         </section>
         <section className="flex_47 leading-8 p-2">
           <>
@@ -196,7 +231,9 @@ function Individual(props) {
             <form action="" className="mt-4">
               <fieldset>
                 <div className="flex">
-                  <label htmlFor="" className="font-bold">QUANTITY</label>
+                  <label htmlFor="" className="font-bold">
+                    QUANTITY
+                  </label>
                   <select
                     name="qunty"
                     onChange={handleChange}
@@ -257,10 +294,10 @@ function Individual(props) {
             </ul>
             <ul className="my-6">
               <li className="text-sm">
-                <i class="fa-solid fa-shield"></i> Security policy 
+                <i class="fa-solid fa-shield"></i> Security policy
               </li>
               <li className="text-sm mt-2">
-                <i class="fa-solid fa-truck"></i> Delivery policy 
+                <i class="fa-solid fa-truck"></i> Delivery policy
               </li>
               <li className="text-sm mt-2">
                 <i class="fa-solid fa-right-left"></i> Return policy
@@ -374,20 +411,56 @@ function Individual(props) {
                 </div>
                 <form
                   action=""
-                  className="flex flex-col items-start"
+                  className={
+                    userLogged
+                      ? "flex flex-col items-start"
+                      : "flex flex-col items-start opacity-40 cursor-not-allowed"
+                  }
                   onSubmit={handleSubmit}
                 >
                   <textarea
+                    disabled={userLogged ? false : true}
                     onChange={handleReviewChange}
                     placeholder="Write your review here"
                     name="review"
                     value={reviewPost.review}
                     className=" rounded-sm border-2 border-orange-200 p-2 w-1/2 "
                   />
-                  <button className="m-2 bg-black text-white p-2">
+                  <button
+                    disabled={userLogged ? false : true}
+                    className="m-2 bg-black text-white p-2"
+                  >
                     Submit
                   </button>
                 </form>
+
+                {!userLogged ? (
+                  <div className="flex items-center justify-center w-full h-4/12">
+                    <article className="flex items-center justify-center w-6/12">
+                      <div className="w-6/12">
+                        <lottie-player
+                          src="https://assets9.lottiefiles.com/packages/lf20_zbakob77.json"
+                          background="transparent"
+                          speed="1"
+                          style={{ width: "140%", height: "100%" }}
+                          loop
+                          autoplay
+                        ></lottie-player>
+                      </div>
+                      <h3 className="uppercase font-semibold mt-20 w-6/12">
+                        login to give review <br />
+                        <span className="font-light text-xs lowercase mt-2 inline-block">
+                          ( Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Enim, at aperiam tenetur neque eum officia a
+                          quae ipsa assumenda qui saepe quibusdam expedita iusto
+                          corporis? Beatae quos ipsum placeat dicta! )
+                        </span>
+                      </h3>
+                    </article>
+                  </div>
+                ) : (
+                  ""
+                )}
 
                 <div className="mt-8 ">
                   <h3 className="font-bold mb-2">Comments</h3>
@@ -413,28 +486,41 @@ function Individual(props) {
         <h2 className="text-3xl mt-5 font-extrabold text-center ">
           YOU MIGHT ALSO LIKE
         </h2>
-        <section className="m-auto flex justify-between items-center flex-wrap my-6">
-          {allProducts?.map((each, index) => (
-            <>
-              <article className="flex_23  mt-2 p-1.5 rounded-lg">
-                <NavLink to={`/${each._id}`}>
-                  <div className="flex items-center shadow-md border p-2 rounded-lg">
-                    <img className="w-5/12" src={each.productImage} alt="" />
+        {!subLoading ? (
+          <section className="m-auto flex justify-between items-center flex-wrap my-6">
+            {allProducts?.map((each, index) => (
+              <>
+                <article className="flex_23  mt-2 p-1.5 rounded-lg">
+                  <NavLink to={`/${each._id}`}>
+                    <div className="flex items-center shadow-md border p-2 rounded-lg">
+                      <img className="w-5/12" src={each.productImage} alt="" />
 
-                    <div className="ml-8">
-                      <h4>{each.productName}</h4>
-                      <p className="text-xs font-bold mt-2">
-                        {each?.description
-                          ? each?.description[0].slice(2, 20) + ". . ."
-                          : "On The Way"}
-                      </p>
+                      <div className="ml-8">
+                        <h4>{each.productName}</h4>
+                        <p className="text-xs font-bold mt-2">
+                          {each?.description
+                            ? each?.description[0].slice(2, 20) + ". . ."
+                            : "On The Way"}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </NavLink>
-              </article>
-            </>
-          ))}
-        </section>
+                  </NavLink>
+                </article>
+              </>
+            ))}
+          </section>
+        ) : (
+          <div className="Loader-Sub flex justify-center items-center">
+            <lottie-player
+              src="https://assets3.lottiefiles.com/packages/lf20_AQEOul.json"
+              background="transparent"
+              speed="1"
+              style={{ width: "300px", height: "300px" }}
+              loop
+              autoplay
+            ></lottie-player>
+          </div>
+        )}
       </div>
     </>
   );

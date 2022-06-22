@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { withRouter } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 function Header(props) {
-  var { userData, handleUser, setUserData } = props;
+  var { userData, handleUser, setUserData, setUserLogged } = props;
   console.log(userData, "userData given by me");
 
   const handleLogout = () => {
@@ -11,6 +11,7 @@ function Header(props) {
     }
     setUserData(null);
     props.history.push("/");
+    setUserLogged(false);
   };
 
   return (
@@ -81,7 +82,7 @@ function Header(props) {
                       }
                       alt=""
                     />
-                    <p className="mt-1 ml-1">{userData.username}</p>
+                    <p className="mt-1 ml-1 uppercase">{userData?.username}</p>
                   </article>
                   <button
                     className="bg-black text-white p-2 rounded-md"
