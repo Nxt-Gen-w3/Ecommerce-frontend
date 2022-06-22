@@ -18,6 +18,7 @@ import Cart from "./Cart";
 import AllItems from "./AllItems";
 import FAQ from "./FAQ";
 import About from "./About";
+import Terms from './Terms&Conditions'
 
 function App() {
   let [userData, setUserData] = useState(null);
@@ -79,6 +80,9 @@ function App() {
           </Route>
           <Route path="/about">
             <About />
+          </Route>
+          <Route path='/terms'>
+            <Terms />
           </Route>
           <Route path="/allItems" exact>
             <AllItems allProducts={allProducts} />
