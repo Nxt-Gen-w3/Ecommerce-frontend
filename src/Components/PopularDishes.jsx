@@ -64,9 +64,11 @@ function PopularDishes() {
         </section>
 
         <section>
-          <button className="border  animate-bounce p-4 px-10 m-auto mt-20 rounded-lg bg-yellow-500 transition-all font-extrabold block">
-            <NavLink to="/allItems">Show More</NavLink>
-          </button>
+          <NavLink to="/allItems">
+            <button className="border  animate-bounce p-4 px-10 m-auto mt-20 rounded-lg bg-yellow-500 transition-all font-extrabold block">
+              Show More
+            </button>
+          </NavLink>
         </section>
       </div>
     </>

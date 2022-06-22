@@ -23,12 +23,16 @@ import Terms from './Terms&Conditions'
 function App() {
   let [userData, setUserData] = useState(null);
   const [allProducts, setallProducts] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    handleAllProducts();
     let storagekey = localStorage.getItem("userToken");
     handleUser(storagekey);
-    handleAllProducts();
-  }, "");
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+  }, []);
 
   const handleUser = (storagekey) => {
     if (storagekey) {
@@ -43,7 +47,7 @@ function App() {
       )
         .then((res) => res.json())
         .then((data) => {
-          setUserData(data.user);
+          setUserData(data?.user);
         });
     }
   };
@@ -54,10 +58,36 @@ function App() {
         setallProducts(data?.products);
       });
   };
+
+  if (loading) {
+    return (
+      <>
+        <Header
+          userData={userData}
+          handleUser={handleUser}
+          setUserData={setUserData}
+        />
+        <div className="Loader flex justify-center items-center">
+          <lottie-player
+            src="https://assets3.lottiefiles.com/packages/lf20_AQEOul.json"
+            background="transparent"
+            speed="1"
+            style={{ width: "300px", height: "300px" }}
+            loop
+            autoplay
+          ></lottie-player>
+        </div>
+      </>
+    );
+  }
   return (
     <>
       <div>
-        <Header userData={userData} />
+        <Header
+          userData={userData}
+          handleUser={handleUser}
+          setUserData={setUserData}
+        />
         <Switch>
           <Route path="/" exact>
             <Hero />
@@ -70,22 +100,26 @@ function App() {
             <LatestNews />
           </Route>
           <Route path="/signin" exact>
-            <SignIn />
+            <SignIn loading={loading} handleUser={handleUser} />
           </Route>
           <Route path="/signup" exact>
-            <SignUp />
+            <SignUp loading={loading} />
           </Route>
           <Route path="/cart" exact>
-            <Cart />
+            <Cart loading={loading} />
           </Route>
           <Route path="/about">
-            <About />
+            <About loading={loading} />
           </Route>
-          <Route path='/terms'>
+          <Route path="/terms">
             <Terms />
           </Route>
           <Route path="/allItems" exact>
-            <AllItems allProducts={allProducts} />
+            <AllItems
+              loading={loading}
+              allProducts={allProducts}
+              setLoading={setLoading}
+            />
           </Route>
           <Route path="/faq" exact>
             <FAQ />

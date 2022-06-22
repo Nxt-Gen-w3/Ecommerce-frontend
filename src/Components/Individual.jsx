@@ -10,6 +10,7 @@ function Individual(props) {
   const [reviewPost, setReviewPost] = useState({
     review: "",
     rating: 0,
+    author: "",
   });
   const { allProducts } = props;
 
@@ -19,7 +20,8 @@ function Individual(props) {
   useEffect(() => {
     handleIndividule();
     getReviews();
-  }, []);
+    console.log(reviews, "reviews");
+  }, reviews);
 
   const getReviews = () => {
     const id = props.match.params.id;
@@ -53,6 +55,8 @@ function Individual(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     handleReviewPosts();
+    getReviews();
+    setReviewPost({ review: "", rating: 0, author: "" });
   };
 
   const handleReviewPosts = () => {
@@ -71,7 +75,7 @@ function Individual(props) {
             review: {
               body: reviewPost.review,
               rating: reviewPost.rating,
-              author: "",
+              author: reviewPost.author,
             },
           }),
         }

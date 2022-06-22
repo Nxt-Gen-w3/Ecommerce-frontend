@@ -1,6 +1,7 @@
 import { React, useEffect, useState } from "react";
 import { NavLink, withRouter } from "react-router-dom";
 function SignUp(props) {
+  const [loading, setLoading] = useState(true);
   const [register, setRegister] = useState({
     username: "",
     bio: "",
@@ -8,7 +9,11 @@ function SignUp(props) {
     password: "",
     image: "",
   });
-  useEffect(() => {}, []);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
 
   const handleRegister = () => {
     fetch(
@@ -57,6 +62,21 @@ function SignUp(props) {
     handleRegister();
     props.history.push("/signin");
   };
+
+  if (loading) {
+    return (
+      <div className="Loader-Sub flex justify-center items-center">
+        <lottie-player
+          src="https://assets3.lottiefiles.com/packages/lf20_AQEOul.json"
+          background="transparent"
+          speed="1"
+          style={{ width: "300px", height: "300px" }}
+          loop
+          autoplay
+        ></lottie-player>
+      </div>
+    );
+  }
   return (
     <>
       <div>

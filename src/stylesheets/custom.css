@@ -23,6 +23,9 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+html{
+  scroll-behavior: smooth;
+}
 body {
 	line-height: 1;
   font-family: 'Open Sans', sans-serif;
@@ -165,7 +168,15 @@ table {
 .FAQ{
   height: 60vh;
 }
-
+/* Loading */
+.Loader{
+  height: 90vh ;
+  width: 100%;
+}
+.Loader-Sub{
+  height: 85vh;
+  width: 100%;
+}
 /* respsonsiv design */
 @media screen and (max-width : 915px) {
   html{

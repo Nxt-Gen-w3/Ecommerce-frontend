@@ -1,9 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import DishCard from "./DishCard";
 import PopDishes from "../JsonFiles/PopDishes.json";
 import { withRouter, NavLink } from "react-router-dom";
 function AllItems(props) {
   const { allProducts } = props;
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+  if (loading) {
+    return (
+      <div className="Loader-Sub flex justify-center items-center">
+        <lottie-player
+          src="https://assets3.lottiefiles.com/packages/lf20_AQEOul.json"
+          background="transparent"
+          speed="1"
+          style={{ width: "300px", height: "300px" }}
+          loop
+          autoplay
+        ></lottie-player>
+      </div>
+    );
+  }
   return (
     <>
       <div className="container py-20">
