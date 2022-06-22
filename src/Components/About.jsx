@@ -1,6 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 function About() {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+  }, []);
+  if (loading) {
+    return (
+      <div className="Loader-Sub flex justify-center items-center">
+        <lottie-player
+          src="https://assets3.lottiefiles.com/packages/lf20_AQEOul.json"
+          background="transparent"
+          speed="1"
+          style={{ width: "300px", height: "300px" }}
+          loop
+          autoplay
+        ></lottie-player>
+      </div>
+    );
+  }
   return (
     <section className="container m-5 flex flex-col items-center h-80 py-20">
       <h3 className="text-3xl font-bold text-orange-500 ">About Us</h3>

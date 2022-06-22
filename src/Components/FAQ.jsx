@@ -1,10 +1,30 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 function FAQ() {
   let [state, setState] = useState(null);
 
   let handleClick = (each, index) => {
     setState((state = state == index ? null : index));
   };
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+  }, []);
+  if (loading) {
+    return (
+      <div className="Loader-Sub flex justify-center items-center">
+        <lottie-player
+          src="https://assets3.lottiefiles.com/packages/lf20_AQEOul.json"
+          background="transparent"
+          speed="1"
+          style={{ width: "300px", height: "300px" }}
+          loop
+          autoplay
+        ></lottie-player>
+      </div>
+    );
+  }
 
   let questions = [
     {
@@ -26,7 +46,7 @@ function FAQ() {
     {
       Q: "What products are we currently dealing in?",
       A: "We are currently dealing in home-made pickles, dry fruits & mouth fresheners. We intend to soon launch more products.",
-    }
+    },
   ];
   return (
     <>

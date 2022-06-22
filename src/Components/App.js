@@ -104,6 +104,7 @@ function App() {
             <Description />
             <LatestNews />
           </Route>
+
           <Route path="/signin" exact>
             <SignIn
               loading={loading}
@@ -111,18 +112,23 @@ function App() {
               handleUser={handleUser}
             />
           </Route>
+
           <Route path="/signup" exact>
             <SignUp loading={loading} />
           </Route>
+
           <Route path="/cart" exact>
             <Cart loading={loading} />
           </Route>
+
           <Route path="/about">
             <About loading={loading} />
           </Route>
+
           <Route path="/terms">
             <Terms />
           </Route>
+
           <Route path="/allItems" exact>
             <AllItems
               loading={loading}
@@ -130,9 +136,11 @@ function App() {
               setLoading={setLoading}
             />
           </Route>
+
           <Route path="/faq" exact>
-            <FAQ />
+            <FAQ loading={loading} />
           </Route>
+
           <Route path="/:id" exact>
             <Individual allProducts={allProducts} userLogged={userLogged} />
           </Route>

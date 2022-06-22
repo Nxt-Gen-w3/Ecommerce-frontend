@@ -3,8 +3,6 @@ import { withRouter } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 function Header(props) {
   var { userData, handleUser, setUserData, setUserLogged } = props;
-  console.log(userData, "userData given by me");
-
   const handleLogout = () => {
     if (localStorage.getItem("userToken")) {
       localStorage.clear();
@@ -30,7 +28,7 @@ function Header(props) {
             </NavLink>
           </p>
 
-          <ul className="flex flex_38 justify-between header_option">
+          <ul className="flex flex_28 justify-between header_option">
             <li className="hover:text-yellow-500 transition-all font-extrabold cursor-pointer home_sub_display">
               <NavLink to="/" activeClassName="text-red-900">
                 Home
@@ -42,7 +40,7 @@ function Header(props) {
               </NavLink>
             </li>
             <li className="hover:text-yellow-500 transition-all font-extrabold cursor-pointer">
-              Products <i className="fa-solid fa-caret-down"></i>
+              Products <i className="fa-solid fa-caret-down ml-1"> </i>
             </li>
             <li className="hover:text-yellow-500 transition-all font-extrabold cursor-pointer">
               <NavLink to="/FAQ" activeClassName="text-red-900">
@@ -54,7 +52,7 @@ function Header(props) {
             </li>
           </ul>
 
-          <ul className="flex_18 header_text">
+          <ul className="flex_32 header_text">
             <li className="text-right">
               <small className="text-green-500">call Order in</small>
             </li>
@@ -71,7 +69,7 @@ function Header(props) {
             </li>
             <li className="">
               {userData ? (
-                <div className="flex items-center">
+                <div className="flex items-start">
                   <article className="flex flex-col items-center px-4">
                     <img
                       className="rounded-full w-10 h-10"

@@ -8,7 +8,7 @@ function Individual(props) {
   const [individualData, setIndividualData] = useState(null);
   const [qunty, setQunty] = useState("");
   const [reviews, setReviews] = useState(null);
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
   const [subLoading, setSubLoading] = useState(true);
   const [reviewPost, setReviewPost] = useState({
     review: "",
@@ -20,13 +20,12 @@ function Individual(props) {
     setData(e);
   };
   useEffect(() => {
-    handleIndividule();
+    handleIndividule(individualData);
     getReviews();
-    setTimeout(() => {
-      setLoading(false);
-    }, 3000);
+    // setTimeout(() => {
+    //   setLoading(false);
+    // }, 3000);
   }, [individualData]);
-
   const getReviews = () => {
     const id = props.match.params.id;
     fetch(
@@ -52,7 +51,7 @@ function Individual(props) {
         setIndividualData(data);
         setTimeout(() => {
           setSubLoading(false);
-        }, 6000);
+        }, 3000);
       });
   };
   const handleReviewChange = ({ target }) => {
@@ -97,20 +96,20 @@ function Individual(props) {
         });
     }
   };
-  if (loading) {
-    return (
-      <div className="Loader-Sub flex justify-center items-center">
-        <lottie-player
-          src="https://assets3.lottiefiles.com/packages/lf20_AQEOul.json"
-          background="transparent"
-          speed="1"
-          style={{ width: "300px", height: "300px" }}
-          loop
-          autoplay
-        ></lottie-player>
-      </div>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <div className="Loader-Sub flex justify-center items-center">
+  //       <lottie-player
+  //         src="https://assets3.lottiefiles.com/packages/lf20_AQEOul.json"
+  //         background="transparent"
+  //         speed="1"
+  //         style={{ width: "300px", height: "300px" }}
+  //         loop
+  //         autoplay
+  //       ></lottie-player>
+  //     </div>
+  //   );
+  // }
 
   return (
     <>
@@ -490,7 +489,10 @@ function Individual(props) {
           <section className="m-auto flex justify-between items-center flex-wrap my-6">
             {allProducts?.map((each, index) => (
               <>
-                <article className="flex_23  mt-2 p-1.5 rounded-lg">
+                <article
+                  className="flex_23  mt-2 p-1.5 rounded-lg"
+                  onClick={handleIndividule}
+                >
                   <NavLink to={`/${each._id}`}>
                     <div className="flex items-center shadow-md border p-2 rounded-lg">
                       <img className="w-5/12" src={each.productImage} alt="" />
